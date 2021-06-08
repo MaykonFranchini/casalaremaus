@@ -1,0 +1,14 @@
+.button-card {
+ background-color: white;
+ border-radius: 20px;
+ padding: 10px 20px;
+ color: $dark-green;
+ text-decoration: none;
+ margin: 5px auto;
+
+ &:hover {
+  color: $dark-green;
+  text-decoration: none;
+  opacity: .8;
+ }
+}

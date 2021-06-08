@@ -1,0 +1,14 @@
+.white-big-card{
+    background-color: white;
+    padding: 25px;
+    text-align: justify;
+}
+
+.image-card{
+    display: flex;
+    justify-content: center;
+}
+
+.goal-image{
+    background-image: asset-url('goal.jpg');
+}

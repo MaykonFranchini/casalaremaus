@@ -1,2 +1,52 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+          <div class="banner-image">
+            <h1>Casa Lar Emaús</h1>
+            <p>Mais que uma casa, um Lar!</p>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div>
+          <%= image_tag "clipboard.svg", alt: "Project", width: 100 %>
+          <h1>Propostas</h1>
+          <p>Quer propor uma parceira ou um novo projeto para a Casa Lar? Conte mais sobre sua ideia pra gente por aqui!</p>
+          <%= link_to 'Tenho uma Proposta', root_path %>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <%= image_tag "box.svg", alt: "Box with a hearth", width: 100 %>
+          <h1>Doações</h1>
+          <p>Você pode conferir as necessidades atuais da casa para contribuir com recursos e mantimentos.</p>
+          <%= link_to 'Quero Doar', root_path %>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <%= image_tag "love.svg", alt: "Project", width: 100 %>
+          <h1>Voluntariado</h1>
+          <p>A Casa Lar possui projetos em diferentes frentes para aqueles que desejam participar como voluntários.</p>
+          <%= link_to 'Quero ser Voluntário', root_path %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="footer">
+            <h1>Endereço:</h1>
+            <p>Rua Eurico Hosterno, 321 - Santa Mônica. Florianópolis/SC - CEP: 88035-400</p>
+            <h1>Contato:</h1>
+            <p>Email: asm.casalaremaus@gmail.com. Fone: (48) 3233.4915</p>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+

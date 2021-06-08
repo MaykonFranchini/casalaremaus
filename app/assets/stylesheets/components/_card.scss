@@ -35,34 +35,40 @@
 }
 
 @media(max-width: 996px) {
-    .card-home{
-        height: 350px;
-        .icon-card {
-            width: 75px;
-        }
-        h2 {
-            font-size: 25px;
-        }
-        p {
-            font-size: 10px;
-        }
+  .card-home {
+    height: 350px;
+
+    .icon-card {
+      width: 75px;
     }
+
+    h2 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 10px;
+    }
+  }
 }
 
 @media(max-width: 768px) {
-    .card-home{
-        height: 250px;
-        padding: 0 20px;
-        margin-bottom: 10px;
-        .icon-card {
-            width: 50px;
-        }
-        h2 {
-            font-size: 25px;
-        }
-        p {
-            font-size: 10px;
-            margin: 0 100px;
-        }
+  .card-home {
+    height: 250px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+
+    .icon-card {
+      width: 50px;
     }
+
+    h2 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 10px;
+      margin: 0 100px;
+    }
+  }
 }

@@ -2,13 +2,22 @@
     background-color: white;
     padding: 25px;
     text-align: justify;
+    border-radius: 10px;
 }
 
 .image-card{
     display: flex;
     justify-content: center;
-}
-
-.goal-image{
-    background-image: asset-url('goal.jpg');
+    width: 100%;
+    background-size: cover;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    align-items: center;
+    height: 100%;
+    color: black;
+    border-radius: 10px;
+    h2{
+        background-color: white;
+        padding:10px;
+        border-radius: 6px;
+    }
 }

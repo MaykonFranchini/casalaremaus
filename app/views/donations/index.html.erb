@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col my-3 responsive-col">
+      <div class="py-5 text-center">
+        <h1 class="mb-3">De que forma você prefere contribuir?</h1>
+        <p> A Casa Lar Emaús posta mensalmente uma lista dos recursos materiais para a manutenção da casa, você pode conferir a lista abaixo e contribuir clicando no botão "Doar Recursos Materiais".</p>
+      </div>
+    </div>
+    <div class="col my-3 buttons-col">
+      <%= link_to 'Doar recursos materiais', new_order_path, class:'button-banner mb-3'%>
+      <%= link_to 'Ilumine uma vida', root_path, class:'button-banner mb-3'%>
+      <%= link_to 'Depositar valor', root_path, class:'button-banner'%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <table class="content-table">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @donations.each do |donation|%>
+                <% if donation.status != false && donation.quantity > 0 %>
+                    <tr>
+                        <td><%= donation.name %></td>
+                        <td><%= "#{donation.quantity} #{donation.description}" %></td>
+                        <td><%= donation.donation_tag %></td>
+                    </tr>
+                <% end %>
+            <% end %>
+        </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+

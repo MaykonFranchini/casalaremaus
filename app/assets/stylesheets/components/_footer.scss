@@ -40,23 +40,23 @@
 }
 
 
-@media only screen and (max-width: 763px){
+@media only screen and (max-width: 763px) {
 
-        h2 {
-      font-size: 18px;
-      }
+  h2 {
+    font-size: 18px;
+  }
 
-      h3 {
-      font-size: 16px;
-    }
+  h3 {
+    font-size: 16px;
+  }
 
-    ul {
-      display: flex;
-      justify-content: center;
-    }
+  ul {
+    display: flex;
+    justify-content: center;
+  }
 
-    li {
-      margin-right: 10px;
-      padding: 20px;
-    }
+  li {
+    margin-right: 10px;
+    padding: 20px;
+  }
 }

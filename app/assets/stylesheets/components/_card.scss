@@ -39,6 +39,30 @@
     background-color: $light-green;
 }
 
+/* Project cards */
+
+.card-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b')
+}
+
+.card-project p {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+}
+
+/* Media Queries */
+
 @media(max-width: 768px) {
   .cards-container {
     height: 100%;

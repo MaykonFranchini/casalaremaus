@@ -3,4 +3,13 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'about', to: 'pages#about', as: :about
+  resources :orders, except: [:index, :destroy] do
+    resources :items, only: :create
+  end
+  resources :donations
+  resources :projects do
+    resources :volunteers, only: [:new, :create]
+  end
+  resources :solicitations, only: :destroy
+  get 'dashboard', to: 'users#dashboard', as: :dashboard
 end

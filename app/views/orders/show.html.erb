@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Welcome, <%=  @order.name %></h1>
+  <h2>Let's start your order!!!</h2>
+  <%= simple_form_for [@order,@item] do |f| %>
+  <%= f.association :donation %>
+  <%= f.input :quantity  %>
+  <%= f.submit  %>
+  <% end %>
+</div>

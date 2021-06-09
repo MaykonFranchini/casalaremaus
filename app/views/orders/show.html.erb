@@ -6,4 +6,13 @@
   <%= f.input :quantity  %>
   <%= f.submit  %>
   <% end %>
+
+  <div>
+    <% @order.items.each do |item| %>
+    <div>
+        <%= item.donation.name %>
+        <p>Quantity: <%= item.quantity %></p>
+    </div>
+    <% end %>
+  </div>
 </div>

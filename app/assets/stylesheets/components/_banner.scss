@@ -5,12 +5,18 @@
   width: 100%;
   margin: 5% 0 8% 0;
 
-  .banner-text {
+  .banner-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: flex-end;
     color: #1B7641;
+
+    .banner-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .image-crop {

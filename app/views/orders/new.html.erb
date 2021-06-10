@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Create a new Order</h1>
+  <h2>It's nice to see you here!!!🥰</h2>
+  <p>You're one step to be the change!!!</p>
+  <%= simple_form_for(@order) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :phone %>
+    <%= f.submit  %>
+  <% end %>
+</div>

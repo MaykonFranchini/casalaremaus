@@ -28,6 +28,9 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 # Use Nokogiri to work with xml
 gem 'nokogiri'
+# User Open-uri to parse html
+gem 'open-uri'
+
 gem 'devise'
 #Some styling gems
 gem 'autoprefixer-rails', '10.2.5'

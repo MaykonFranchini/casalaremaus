@@ -1,15 +1,16 @@
 <div class="container">
-
   <div class="cards-project">
-    <div class="projects-header">
+    <div class="card-projects-header">
       <h2>Nossos projetos disponíveis:</h2>
     </div>
     <div class="row">
       <% @projects.each do |project|  %>
         <div class="col-sm-12 col-md-6 col-lg-4">
-          <div class="card-project">
-            <p><%= project.name %></p>
-          </div>
+          <%= link_to project_path(project) do %>
+            <div class="card-project">
+              <p><%= project.name %></p>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>

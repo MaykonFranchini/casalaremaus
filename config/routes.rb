@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'pages/download', as: :download
   get 'contact', to: 'pages#contact', as: :contact
   resources :orders, except: [:index, :destroy] do
-    resources :items, only: :create
+    resources :items, only: [:create, :destroy]
   end
   resources :donations
   resources :projects do

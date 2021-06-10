@@ -11,11 +11,11 @@
             <div class="form-volunteer-box py-5">
               <%= simple_form_for [@project, @volunteer] do |f| %>
                 <%= f.input :name, label: 'Nome:' %>
-                <%= f.input :skills, label: "Habilidade:" %>
                 <%= f.input :email, label: "Email:" %>
-                <%= f.input :phone, label: "Contato:" %>
-                <%= f.input :date_of_birth, label: "Data de Nascimento:" %>
+                <%= f.input :date_of_birth, as: :date, html5: true, label: "Data de Nascimento:" %>
                 <%= f.input :marital_status, label: "Estado civil:" %>
+                <%= f.input :skills, label: "Habilidade:" %>
+                <%= f.input :phone, label: "Contato:" %>
                 <%= f.input :cpf, label: "CPF:" %>
                 <%= f.input :availability, label: "Disponibilidade:" %>
                 <%= f.input :experience, label: "Experiência:" %>

@@ -30,22 +30,25 @@ import "bootstrap";
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 
+// CSS
+import 'mapbox-gl/dist/mapbox-gl.css';
+// internal imports
+import { initMapbox } from '../plugins/init_mapbox';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-    initSweetalert('#sweet-alert-demo', {
-      title: "Donation Submited!",
-      text: "Check your email for more info.",
-      icon: "success"
-    }, (value) => {
-      if (value) {
-        const link = document.querySelector('#submit-link');
-        link.click();
-      }
-    });
-});
-
-
-
+  initMapbox();
+  initSweetalert('#sweet-alert-demo', {
+    title: "Donation Submited!",
+    text: "Check your email for more info.",
+    icon: "success"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#submit-link');
+      link.click();
+    }
+  });
+})
 
 

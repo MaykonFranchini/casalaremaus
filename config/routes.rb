@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'about', to: 'pages#about', as: :about
   get 'transfer', to: 'pages#transfer', as: :transfer
+  get 'pages/download', as: :download
   resources :orders, except: [:index, :destroy] do
     resources :items, only: :create
   end

@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col my-5">
+      <%= simple_form_for(@project) do |f| %>
+        <%= f.input :name, label: 'Qual seria o nome dessa parceria ou projeto?' %>
+        <%= f.input :description, label: 'Por favor, descreva mais sua ideia e deixe um meio de contato (telefone, e-mail, etc.).' %>
+        <%= f.button :submit, "Enviar minha proposta", class: "button-banner" %>
+      <% end %>
+    </div>
+  </div>
+</div>

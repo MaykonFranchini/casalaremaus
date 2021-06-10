@@ -1,5 +1,5 @@
 class DonationsController < ApplicationController
-  skip_before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
   def index
     @donations = Donation.all
   end

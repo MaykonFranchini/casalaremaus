@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-10">
+      <div class="card-volunteer">
+        <div class="form-header">
+          <h2><%= @project.name %></h2>
+          <p><%= @project.description %></p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-8">
+            <div class="form-volunteer-box py-5">
+
+              <%= simple_form_for [@project, @volunteer] do |f| %>
+                <%= f.input :name, label: 'Nome:' %>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <%= f.input :email, label: "Email:" %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= f.input :phone, label: "Contato:" %>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <%= f.input :marital_status, collection: Volunteer::MAR_STATUS, label: "Estado civil:" %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= f.input :date_of_birth, as: :date, max: "01-01-2006", min: "01-01-1930", html5: true, label: "Data de Nascimento:" %>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <%= f.input :cpf, label: "CPF:" %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= f.input :cnpj, label: "CNPJ:" %>
+                  </div>
+                </div>
+                <%= f.input :skills, label: "Prática à oferecer:" %>
+                <%= f.input :availability, label: "Disponibilidade:" %>
+                <%= f.input :experience, label: "Experiência:" %>
+                <%= f.button :submit, class: 'btn btn-primary' %>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

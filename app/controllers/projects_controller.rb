@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
 
   def show
     @volunteer = Volunteer.new
+  end
 
   def create
     @project = Project.new(project_params)

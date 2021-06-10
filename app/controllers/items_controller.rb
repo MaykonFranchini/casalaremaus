@@ -14,6 +14,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:order_id])
+    @item.destroy
+    redirect_to order_path(params[:id])
+  end
 
   private
 

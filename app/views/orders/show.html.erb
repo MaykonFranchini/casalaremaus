@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Welcome, <%=  @order.name %></h1>
   <h2>Let's start your order!!!</h2>
-  <%= simple_form_for [@order,@item] do |f| %>
+  <%= simple_form_for([@order, @item], remote: true) do |f| %>
   <%= f.association :donation %>
   <%= f.input :quantity  %>
   <%= f.submit class: "button-donation-submit"  %>
@@ -20,6 +20,7 @@
           <h3><%= item.donation.name %></h3>
           <p>Quantity: <%= item.quantity %></p>
         </div>
+        <%= link_to '<i class="fas fa-times delete-icon"></i>'.html_safe, order_item_path(item), method: :delete %>
       </div>
     <% end %>
   </div>

@@ -45,3 +45,4 @@ initSweetalert('#sweet-alert-demo', {
     link.click();
   }
 });
+

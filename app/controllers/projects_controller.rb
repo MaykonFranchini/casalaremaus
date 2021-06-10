@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @volunteer = Volunteer.new
   end
 
   private

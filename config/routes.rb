@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   resources :donations
   resources :projects do
-    resources :volunteers, only: [:new, :create]
+    resources :volunteers, only: [:create]
   end
   resources :solicitations, only: :destroy
   get 'dashboard', to: 'users#dashboard', as: :dashboard

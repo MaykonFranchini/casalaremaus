@@ -46,7 +46,7 @@
   background-color: white;
   padding: 20px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .cards-project a:hover {
@@ -64,7 +64,7 @@
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   margin: 10px;
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b')
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('project-default.jpg')
 }
 
 .card-project:hover {
@@ -77,10 +77,19 @@
   font-weight: bold;
 }
 
-.projects-header {
+.card-projects-header {
   margin: 0 10px;
   margin-bottom: 20px;
   color: #1B7641;
+}
+
+/*    Volunteer cards --> projects/:id    */
+
+.card-volunteer {
+  margin-top: 40px;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 /* Media Queries */

@@ -1,0 +1,15 @@
+/*    Volunteer form --> projects/:id    */
+
+.form-header {
+    margin-top: 40px;
+    background-color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-image: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.40)), url("project-default.jpg");
+    background-size:cover;
+    height: 220px;
+    color: white;
+    background-position:bottom;
+    padding: 30px 20px;
+}

@@ -10,7 +10,16 @@
           <div class="col-sm-12 col-md-8">
             <div class="form-volunteer-box py-5">
               <%= simple_form_for [@project, @volunteer] do |f| %>
-                <%= f.input :name, label: "Nome:", placeholder: "Digite seu nome todo" %>
+                <%= f.input :name, label: 'Nome:' %>
+                <%= f.input :skills, label: "Habilidade:" %>
+                <%= f.input :email, label: "Email:" %>
+                <%= f.input :phone, label: "Contato:" %>
+                <%= f.input :date_of_birth, label: "Data de Nascimento:" %>
+                <%= f.input :marital_status, label: "Estado civil:" %>
+                <%= f.input :cpf, label: "CPF:" %>
+                <%= f.input :availability, label: "Disponibilidade:" %>
+                <%= f.input :experience, label: "Experiência:" %>
+                
                 <%= f.button :submit, class: 'btn btn-primary' %>
               <% end %>
             </div>

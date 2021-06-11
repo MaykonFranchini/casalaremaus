@@ -50,5 +50,3 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 })
-
-

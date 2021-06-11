@@ -247,8 +247,8 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass
-  httparty
   geocoder
+  httparty
   jbuilder (~> 2.7)
   listen (~> 3.2)
   nokogiri

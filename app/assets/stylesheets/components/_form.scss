@@ -50,11 +50,13 @@ label {
 
 .contact-info {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
   ul {
     list-style: none;
     display: flex;
+    justify-content: center;
     margin: 0 auto;
+    padding-left: 0;
   }
 
   li {
@@ -69,7 +71,7 @@ label {
   }
 
   i {
-    font-size: 30px;
+    font-size: 40px;
   }
   .email {
     color: $light-purple;

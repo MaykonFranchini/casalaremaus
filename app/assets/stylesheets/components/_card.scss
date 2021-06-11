@@ -122,7 +122,7 @@
 }
 
 .flip-card-inner.is-flipped {
-  transform: rotate(180deg);
+  transform: rotateY(180deg);
 }
 
 .flip-card-face {
@@ -142,7 +142,7 @@
 }
 
 .flip-card-back {
-  transform: rotate(180deg);
+  transform: rotateY(180deg);
 }
 
 .card-content {

@@ -31,6 +31,9 @@ gem 'nokogiri'
 # User Open-uri to parse html
 gem 'open-uri'
 
+# geocoder
+gem 'geocoder'
+
 gem 'devise'
 #Some styling gems
 gem 'autoprefixer-rails', '10.2.5'

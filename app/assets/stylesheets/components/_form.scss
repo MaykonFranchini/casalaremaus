@@ -1,0 +1,36 @@
+/* General form */
+
+label {
+    color: gray;
+    font-size: 14px;
+}
+
+/*    Volunteer form --> projects/:id    */
+
+.form-header {
+    margin-top: 40px;
+    background-color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-image: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.40)), url("project-default.jpg");
+    background-size:cover;
+    height: 220px;
+    color: white;
+    background-position:bottom;
+    padding: 30px;
+}
+
+.form-volunteer-box .form-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgb(167, 167, 167);
+    outline: none;
+    background: transparent;
+}
+
+

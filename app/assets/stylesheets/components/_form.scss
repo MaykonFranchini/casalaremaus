@@ -13,11 +13,11 @@ label {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    background-image: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.40)), url("project-default.jpg");
     background-size:cover;
-    height: 220px;
+    background-repeat: no-repeat;
+    height: 250px;
     color: white;
-    background-position:bottom;
+    background-position: center;
     padding: 30px;
 }
 
@@ -31,6 +31,11 @@ label {
     border-bottom: 1px solid rgb(167, 167, 167);
     outline: none;
     background: transparent;
+}
+
+
+.default-image-project{
+    background-image: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.40)), asset-url('projeto.jpg');
 }
 
 
@@ -84,4 +89,4 @@ label {
   .phone {
     color: $light-red;
   }
-}
+

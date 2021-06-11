@@ -46,3 +46,8 @@ initSweetalert('#sweet-alert-demo', {
   }
 });
 
+const card = document.querySelector('flip-card-inner');
+
+card.addEventListener('click', function () {
+  card.classList.toggle('is-flipped');
+});

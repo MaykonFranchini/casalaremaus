@@ -11,12 +11,12 @@ class PagesController < ApplicationController
     send_file 'app/assets/public/autorizacao-nova.doc', type: "document/doc", :x_sendfile=>true
   end
 
-  def transfer
-    create_session
-  end
-
-  def create_session
-    response = HTTParty.post("https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=#{ENV['PAGSEGURO_EMAIL']}&token=#{ENV['PAGSEGURO_TOKEN']}")
-    @pag_session_id = response['session']['id']
-  end
+  # def transfer
+  #   create_session
+  # end
+  #
+  # def create_session
+  #   response = HTTParty.post("https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=#{ENV['PAGSEGURO_EMAIL']}&token=#{ENV['PAGSEGURO_TOKEN']}")
+  #   @pag_session_id = response['session']['id']
+  # end
 end

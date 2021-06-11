@@ -7,7 +7,11 @@
       <% @projects.each do |project|  %>
         <div class="col-sm-12 col-md-6 col-lg-4">
           <%= link_to project_path(project) do %>
-            <div class="card-project">
+            <% if project.photo.present? %>
+              <div class="card-project" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.photo.key, height: 300, crop: :fill %>')">
+            <% else %>
+              <div class="card-project default-image-project">
+            <% end %>
               <p><%= project.name %></p>
             </div>
           <% end %>

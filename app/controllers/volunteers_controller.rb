@@ -5,9 +5,9 @@ class VolunteersController < ApplicationController
     @solicitation = Solicitation.new
     @solicitation.volunteer = @volunteer
     @solicitation.project = @project
-    @solicitation.save
-
+    
     if @volunteer.save
+      @solicitation.save
       redirect_to projects_path
     else
       redirect_to project_path(@project)

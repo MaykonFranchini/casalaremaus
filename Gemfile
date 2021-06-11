@@ -31,15 +31,19 @@ gem 'nokogiri'
 # User Open-uri to parse html
 gem 'open-uri'
 
-# geocoder
+# Use geocoder for mappings
 gem 'geocoder'
 
 gem 'devise'
+# User Cloudinary to upload and show images/videos
+gem 'cloudinary', '~> 1.16.0'
+
 #Some styling gems
-gem 'autoprefixer-rails', '10.2.5'
+
 gem 'font-awesome-sass'
 gem 'simple_form'
-# Use httparty...
+
+# Use httparty to do some AWESOME STUFFS
 gem 'httparty'
 
 group :development, :test do

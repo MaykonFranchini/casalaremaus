@@ -13,12 +13,13 @@ label {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    background-image: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.40)), url("project-default.jpg");
     background-size:cover;
-    height: 220px;
+    background-repeat: no-repeat;
+    height: 250px;
     color: white;
-    background-position:bottom;
-    padding: 30px;
+    background-position: center;
+    padding: 50px;
+    text-align: center;
 }
 
 .form-volunteer-box .form-group input {
@@ -34,3 +35,59 @@ label {
 }
 
 
+.default-image-project{
+    background-image: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.40)), asset-url('projeto.jpg');
+}
+
+
+// contact page
+.contact-container {
+  display: flex;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.contact-div {
+  max-width: 500px;
+  box-shadow: 2px 2px 4px gray;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 40px;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+
+  li {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color:none;
+  }
+
+  i {
+    font-size: 40px;
+  }
+  .email {
+    color: $light-purple;
+  }
+
+  .whatsapp {
+    color: rgb(37, 211, 102);
+  }
+
+  .phone {
+    color: $light-red;
+  }
+}

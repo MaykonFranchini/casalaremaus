@@ -1,6 +1,38 @@
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @marker.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="container">
+ <div class="contact-container row">
+   <div class="map-div col-8">
+     <div id="map"
+          style="width: 100%; height: 600px;"
+          data-markers="<%= @marker.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+     </div>
+   </div>
 
+    <div class="contact-div col-4">
+      <div class="form-div">
+        <h1>Fique por dentro das novidades</h1>
+        <form class="form-volunteer-box">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="Insira seu nome...">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu email">
+          </div>
+          <button type="submit" class="button-newsletter">Enviar</button>
+        </form>
+      </div>
+      <hr>
+      <div class="contact-info">
+        <h2>Contato</h2>
+        <ul>
+          <li><a class="email" href="mailto:asm.casalaremaus@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
+          <li><a class="whatsapp" href="https://wa.me/+447507691336?text='Ola Gostaria de mais informacoes sobre o projeto'"  target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a class="phone" href=""><i class="fas fa-phone"  target="_blank"></i></a></li>
+        </ul>
+      </div>
+    </div>
+
+ </div>
 </div>

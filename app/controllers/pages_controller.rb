@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     @marker = {
       lat: -27.591153,
       lng: -48.504397,
-      # image_url: helpers.asset_url('logo.png')
+      image_url: helpers.asset_url('logo.png')
     }
   end
 end

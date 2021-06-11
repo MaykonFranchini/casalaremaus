@@ -1,11 +1,24 @@
 <div class="container">
-  <h1>Create a new Order</h1>
-  <h2>It's nice to see you here!!!🥰</h2>
-  <p>You're one step to be the change!!!</p>
-  <%= simple_form_for(@order) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :email %>
-    <%= f.input :phone %>
-    <%= f.submit class: "button-donation-submit"  %>
-  <% end %>
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-10">
+      <div class="card-volunteer">
+        <div class="form-header default-image-project">
+          <h1>Oferecer uma doação de mantimentos</h1>
+          <p class="m-3">Para mandar mantimentos para a casa pedimos que você indique seus dados de contato, selecione os itens que deseja doar e depois leve os mantimentos para nosso endereço físico (ou envie uma entrega por aplicativo)</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-8">
+            <div class="form-volunteer-box py-5">
+              <%= simple_form_for(@order) do |f| %>
+                <%= f.input :name %>
+                <%= f.input :email %>
+                <%= f.input :phone %>
+                <%= f.button :submit, "Escolher os items para doar", class: "button-donation-submit"  %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

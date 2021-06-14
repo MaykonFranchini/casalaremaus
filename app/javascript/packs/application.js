@@ -28,8 +28,7 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initSweetalert } from '../plugins/init_sweetalert';
-
-
+import { cpfOrCnpj } from '../components/form-volunteer';
 // CSS
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
@@ -50,3 +49,6 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 })
+
+document.getElementById("volunteer_cpf_or_cnpj_cnpj").addEventListener('click', cpfOrCnpj);
+document.getElementById("volunteer_cpf_or_cnpj_cpf").addEventListener('click', cpfOrCnpj);

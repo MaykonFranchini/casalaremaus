@@ -33,25 +33,24 @@
                   </div>
                 </div>
 
-    
-
-                
                 <div class="form-row">
                   <div class="col-md-6">
-                    <%= f.collection_radio_buttons :cpf_or_cnpj, [['cpf', 'CPF'], ['cnpj', 'CNPJ']], :first, :last do |b| %>
+                    <%= f.collection_radio_buttons :cpf_or_cnpj, [['cpf', 'CPF'], ['cnpj', 'CNPJ']], :first, :last, { checked: "cpf" } do |b| %>
                       <%= b.label { b.radio_button + " " + b.text } %><br>
                     <% end %>
                   </div>
-                  <div class="form-group col-md-6">
-                    <% if :cpf_or_cnpj == 'cpf' %>
+                  <div class="form-group col-md-6" id="cpf-cnpj-input">
+                    <div id="cpf-box" style="display:;">
                       <%= f.hidden_field :cnpj, value: nil %>
                       <%= f.input :cpf, label: "CPF:" %>
-                    <% else %>
+                      </div>
+                    <div id="cnpj-box" style="display: none;">
                       <%= f.hidden_field :cpf, value: nil %>
                       <%= f.input :cnpj, label: "CNPJ:" %>
-                    <% end %>
+                    </div>
                   </div>
                 </div>
+
                 <%= f.input :skills, label: "Prática à oferecer:" %>
                 <%= f.input :availability, label: "Disponibilidade:" %>
                 <%= f.input :experience, label: "Experiência:" %>

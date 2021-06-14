@@ -40,8 +40,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   initSweetalert('#sweet-alert-demo', {
-    title: "Donation Submited!",
-    text: "Check your email for more info.",
+    title: "Pedido de doação enviado!",
+    text: "Estaremos aguardando a doação em nosso endereço, obrigada!",
     icon: "success"
   }, (value) => {
     if (value) {
@@ -50,5 +50,3 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 })
-
-

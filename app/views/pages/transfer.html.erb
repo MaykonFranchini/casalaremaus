@@ -1,25 +1,34 @@
-<div class="transfer-cards-container">
+<div class="flip-cards-container">
   <div class="row">
     <div class="col-sm-12 col-md-4 mrg">
       <div class="card-home blue-card">
         <%= image_tag "banco-do-brasil.svg", alt: "transferência", class: "bdb-icon" %>
         <span>Realize sua doação por depósito ou tranferência bancária</span>
-        <p class="button-card">Depóstio ou transferência</p>
+        <%= image_tag "pix-test.png", alt: "código qr do pix", class: "pix-code" %>
+        <div class="tranfer-card-text">
+          <span>Depósito</span>
+          <p>Agência: 5201-9</p>
+          <p>Conta: 912.681-3</p>
+        </div>
       </div>
     </div>
     <div class="col-sm-12 col-md-4 mrg">
       <div class="card-home pink-card">
         <%= image_tag "pagseguro.svg", alt: "pagseguro", class: "pg-icon" %>
         <span>Realize sua doação pelo cartão de crédito, via pagseguro</span>
-        <%= link_to 'https://pag.ae/7Wbe1baQt' , name:"Cartão de crédito" %>
+        <a href="https://pag.ae/7Wbe1baQt" class="button-card">Cartão de crédito</a>
       </div>
     </div>
     <div class="col-sm-12 col-md-4 mrg">
       <div class="card-home green-card">
         <%= image_tag "ilumine-uma-vida.svg", alt: "ilumine uma vida", class: "iuv-icon" %>
-        <span>Doe mensalmente através do débito na fatura de Energia Elétrica. Faça o download do formulário de autorização, preencha, assine e nos encaminhe</span>
+        <span>Doe mensalmente através do débito na fatura de Energia Elétrica.</span>
         <%= link_to 'Baixe aqui', download_path, class:"button-card" %>
       </div>
     </div>
   </div>
 </div>
+
+<!--<script type="text/javascript" charset="utf-8">-->
+<!--  PagSeguroDirectPayment.setSessionId('<%= @pag_session_id %>');-->
+<!--</script>-->

@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     resources :volunteers, only: [:create]
   end
   resources :solicitations, only: :destroy
-  get 'dashboard', to: 'users#dashboard', as: :dashboard
+  get 'dashboard', to: 'users#dashboard_adm', as: :dashboard_adm
+  get 'userdashboard', to: 'users#dashboard_user', as: :dashboard_user
 end

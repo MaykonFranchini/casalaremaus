@@ -1,11 +1,24 @@
 <div class="container">
-  <div class="row">
-    <div class="col my-5">
-      <%= simple_form_for(@project) do |f| %>
-        <%= f.input :name, label: 'Qual seria o nome dessa parceria ou projeto?' %>
-        <%= f.input :description, label: 'Por favor, descreva mais sua ideia e deixe um meio de contato (telefone, e-mail, etc.).' %>
-        <%= f.button :submit, "Enviar minha proposta", class: "button-banner" %>
-      <% end %>
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-10">
+      <div class="card-volunteer">
+        <div class="form-header default-image-project">
+          <h2>Propor um projeto ou parceria</h2>
+          <p class="m-5">A Casa Lar Emaús é movida por voluntários, se você tem interesse em propor um projeto ou parceria para a Casa será muito bem-vindo!</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-8">
+            <div class="form-volunteer-box py-5">
+              <%= simple_form_for(@project) do |f| %>
+                <%= f.input :name, label: 'Qual seria o nome dessa parceria ou projeto?', class: "form-group" %>
+                <%= f.input :description, label: 'Por favor, descreva mais sua ideia e deixe um meio de contato (telefone, e-mail, etc.).', class: "form-group" %>
+                <%= f.input :photo, as: :file %>
+                <%= f.button :submit, "Enviar minha proposta", class: "button-banner" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

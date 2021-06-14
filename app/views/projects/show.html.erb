@@ -32,12 +32,24 @@
                     <%= f.input :date_of_birth, as: :date, max: "01-01-2006", min: "01-01-1930", html5: true, label: "Data de Nascimento:" %>
                   </div>
                 </div>
+
+    
+
+                
                 <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <%= f.input :cpf, label: "CPF:" %>
+                  <div class="col-md-6">
+                    <%= f.collection_radio_buttons :cpf_or_cnpj, [['cpf', 'CPF'], ['cnpj', 'CNPJ']], :first, :last do |b| %>
+                      <%= b.label { b.radio_button + " " + b.text } %><br>
+                    <% end %>
                   </div>
                   <div class="form-group col-md-6">
-                    <%= f.input :cnpj, label: "CNPJ:" %>
+                    <% if :cpf_or_cnpj == 'cpf' %>
+                      <%= f.hidden_field :cnpj, value: nil %>
+                      <%= f.input :cpf, label: "CPF:" %>
+                    <% else %>
+                      <%= f.hidden_field :cpf, value: nil %>
+                      <%= f.input :cnpj, label: "CNPJ:" %>
+                    <% end %>
                   </div>
                 </div>
                 <%= f.input :skills, label: "Prática à oferecer:" %>

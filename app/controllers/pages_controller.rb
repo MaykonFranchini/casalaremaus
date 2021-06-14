@@ -6,6 +6,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  def transfer
+  end
+
   def download
     send_file 'app/assets/public/autorizacao-nova.doc', type: "document/doc", :x_sendfile=>true
   end
@@ -18,12 +21,8 @@ class PagesController < ApplicationController
     }
   end
 
-  # def transfer
-  #   create_session
-  # end
-  #
-  # def create_session
-  #   response = HTTParty.post("https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=#{ENV['PAGSEGURO_EMAIL']}&token=#{ENV['PAGSEGURO_TOKEN']}")
-  #   @pag_session_id = response['session']['id']
-  # end
+  def checkout
+    # Gerar um Token de sessão para nosso pagamento
+     @session_id = (PagSeguro::Session.create).id
+  end
 end

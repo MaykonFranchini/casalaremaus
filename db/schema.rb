@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_06_14_134519) do
     t.integer "quantity"
     t.text "description"
     t.string "donation_tag"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -70,13 +70,13 @@ ActiveRecord::Schema.define(version: 2021_06_14_134519) do
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "solicitations", force: :cascade do |t|
-    t.boolean "status"
+    t.boolean "status", default: false
     t.bigint "volunteer_id", null: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false

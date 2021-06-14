@@ -1,0 +1,5 @@
+meta_product_name: "Casa Lar Emaus"
+meta_title: "Casa Lar - Mais que uma casa, um lar."
+meta_description: "A Casa Lar é um abrigo para crianças entre 6 e 12 anos e fornece aos acolhidos moradia, alimentação, saúde, educação, lazer e outras atividades relacionadas com o desenvolvimento integral das crianças."
+meta_image: "banner-facebook.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

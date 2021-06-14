@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_160927) do
+ActiveRecord::Schema.define(version: 2021_06_14_134519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_160927) do
     t.integer "quantity"
     t.text "description"
     t.string "donation_tag"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -70,13 +70,13 @@ ActiveRecord::Schema.define(version: 2021_06_11_160927) do
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "solicitations", force: :cascade do |t|
-    t.boolean "status"
+    t.boolean "status", default: false
     t.bigint "volunteer_id", null: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_160927) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

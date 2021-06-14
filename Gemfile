@@ -34,11 +34,14 @@ gem 'open-uri'
 # Use geocoder for mappings
 gem 'geocoder'
 
+#mailing
+gem 'letter_opener', group: :development
+
 gem 'devise'
 # User Cloudinary to upload and show images/videos
 gem 'cloudinary', '~> 1.16.0'
 
-#Some styling gems
+# Some styling gems
 
 gem 'font-awesome-sass'
 gem 'simple_form'

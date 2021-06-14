@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.order.subject
   #
   def order
-    @user = Order.last
-    mail(to: @user.email, subject: 'Thanks for your donation')
+    @order = params[:order]
+    mail(to: @order.email, subject: 'Thanks for your donation')
   end
 end

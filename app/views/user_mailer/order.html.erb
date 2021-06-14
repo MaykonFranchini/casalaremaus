@@ -1,4 +1,4 @@
-<p>Olá <%= @user.name %>,</p>
+<p>Olá <%= @order.name %>,</p>
 
 <p>Obrigado pela doação!</p>
 <p>Confira abaixo os item doados:</p>
@@ -7,7 +7,7 @@
     <th>Quantidade</th>
     <th>Descrição</th>
   </tr>
-  <% @user.items.each do |item| %>
+  <% @order.items.each do |item| %>
   <tr><td><%= item.quantity%></td>
       <td><%= item.donation.name %></td>
   </tr>

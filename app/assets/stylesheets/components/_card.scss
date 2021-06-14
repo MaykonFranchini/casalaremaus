@@ -141,3 +141,24 @@ p {
 .pix-code {
   width: 50%;
 }
+
+/* Flip-card media query */
+
+@media(max-width: 768px) {
+  .flip-cards-container {
+    height: 100%;
+    margin: 5% 5%;
+
+    .mrg {
+      margin: 3% 0;
+    }
+    .card-home {
+      height: 100%;
+      padding: 5% 8%;
+    }
+
+    .icon-card {
+      width: 25%;
+    }
+  }
+}

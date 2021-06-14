@@ -23,14 +23,16 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+# Autoprefixer for css
+gem "autoprefixer-rails"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 # Use Nokogiri to work with xml
 gem 'nokogiri'
 # User Open-uri to parse html
 gem 'open-uri'
-
+# User Pagseguro-oficial for payment methods
+gem "pagseguro-oficial"
 # Use geocoder for mappings
 gem 'geocoder'
 
@@ -42,6 +44,7 @@ gem 'cloudinary', '~> 1.16.0'
 
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'bootstrap-sass'
 
 # Use httparty to do some AWESOME STUFFS
 gem 'httparty'

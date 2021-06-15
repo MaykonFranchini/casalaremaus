@@ -28,6 +28,16 @@ const mCPF = cpf => {
   return cpf
 }
 
+const mCNPJ = cnpj => {
+  cnpj = cnpj.replace(/\D/g,"")
+  cnpj = cnpj.replace(/(\d{2})(\d)/,"$1.$2")
+  cnpj = cnpj.replace(/(\d{3})(\d)/,"$1.$2")
+  cnpj = cnpj.replace(/(\d{3})(\d)/,"$1/$2")
+  cnpj = cnpj.replace(/(\d{4})(\d{1,2})$/,"$1-$2")
+  return cnpj
+}
+
 export { cpfOrCnpj };
 export { fMasc };
 export { mCPF };
+export { mCNPJ };

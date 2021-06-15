@@ -37,7 +37,16 @@ const mCNPJ = cnpj => {
   return cnpj
 }
 
+const mPhone = phone => {
+  phone = phone.replace(/\D/g,"")
+  phone = phone.replace(/(\d{2})(\d)/,"($1)$2")
+  phone = phone.replace(/(\d{4})(\d{4})$/,"$1-$2")
+
+  return phone
+}
+
 export { cpfOrCnpj };
 export { fMasc };
 export { mCPF };
 export { mCNPJ };
+export { mPhone };

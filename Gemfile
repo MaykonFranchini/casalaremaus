@@ -34,11 +34,18 @@ gem 'open-uri'
 # Use geocoder for mappings
 gem 'geocoder'
 
+#mailing
+gem 'letter_opener', group: :development
+
+# Postmark mail sender
+gem 'postmark-rails'
+
+# devise to control user login/logout/sign in
 gem 'devise'
 # User Cloudinary to upload and show images/videos
 gem 'cloudinary', '~> 1.16.0'
 
-#Some styling gems
+# Some styling gems
 
 gem 'font-awesome-sass'
 gem 'simple_form'

@@ -36,7 +36,7 @@
         <% end %>
       </div>
         <button id="sweet-alert-demo" class="button-donation-submit my-2">Completar doação!</button>
-        <%= link_to "", contact_path, id: "submit-link", class: "hidden" %>
+        <%= link_to "", order_mailer_path(@order), id: "submit-link", class: "hidden" %>
       </div>
     </div>
   </div>

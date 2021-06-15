@@ -28,8 +28,11 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initSweetalert } from '../plugins/init_sweetalert';
-
-
+import { cpfOrCnpj } from '../components/form-volunteer';
+import { fMasc } from '../components/form-volunteer';
+import { mCPF } from '../components/form-volunteer';
+import { mCNPJ } from '../components/form-volunteer';
+import { mPhone } from '../components/form-volunteer';
 // CSS
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
@@ -52,4 +55,21 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
   changeTabs();
+
+  document.getElementById("volunteer_cpf_or_cnpj_cnpj").addEventListener('click', cpfOrCnpj);
+
+  document.getElementById("volunteer_cpf_or_cnpj_cpf").addEventListener('click', cpfOrCnpj);
+
+  document.getElementById('volunteer_cpf').addEventListener('keydown', () => {
+    fMasc(document.getElementById('volunteer_cpf'), mCPF);
+  });
+
+  document.getElementById('volunteer_cnpj').addEventListener('keydown', () => {
+    fMasc(document.getElementById('volunteer_cnpj'), mCNPJ);
+  });
+
+  document.getElementById('volunteer_phone').addEventListener('keydown', () => {
+    fMasc(document.getElementById('volunteer_phone'), mPhone);
+  });
 })
+

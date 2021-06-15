@@ -18,9 +18,31 @@
           </div>
           <div class="tab-indicator"></div>
           <div class="tab-body">
-            <div class="body active">
+            <div class="body active donation-body">
               <h2>This is Doações section</h2>
-              <p>jijaoiajsoiajasoijsaoisajoisajasoi</p>
+              <%= link_to 'Inserir novo item', new_donation_path, class:"button-banner left-margin" %>
+              <section>
+                <table class="content-table">
+                  <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Categoria</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @donations.each do |donation|%>
+                        <% if donation.status != false && donation.quantity > 0 %>
+                            <tr>
+                                <td><%= donation.name %></td>
+                                <td><%= "#{donation.quantity} #{donation.description}" %></td>
+                                <td><%= donation.donation_tag %></td>
+                            </tr>
+                        <% end %>
+                    <% end %>
+                  </tbody>
+                  </table>
+              </section>
             </div>
             <div  class="body">
               <h2>Aqui são os voluntários</h2>

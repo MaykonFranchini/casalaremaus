@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   get 'userdashboard', to: 'users#dashboard_user', as: :dashboard_user
   namespace :admin do
     resources :projects, except: [:index, :show]
+    resources :volunteers, only: [:edit, :update, :destroy]
   end
 end

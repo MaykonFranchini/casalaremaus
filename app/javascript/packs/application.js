@@ -43,7 +43,6 @@ import { changeTabs } from '../components/tabs';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  changeTabs();
   initMapbox();
   initSweetalert('#sweet-alert-demo', {
     title: "Pedido de doação enviado!",
@@ -55,21 +54,23 @@ document.addEventListener('turbolinks:load', () => {
       link.click();
     }
   });
-
-  document.getElementById("volunteer_cpf_or_cnpj_cnpj").addEventListener('click', cpfOrCnpj);
-
-  document.getElementById("volunteer_cpf_or_cnpj_cpf").addEventListener('click', cpfOrCnpj);
-
-  document.getElementById('volunteer_cpf').addEventListener('keydown', () => {
+  
+  let cpfCnpj = document.getElementById("volunteer_cpf_or_cnpj_cnpj")
+  if (cpfCnpj) {
+    cpfCnpj.addEventListener('click', cpfOrCnpj);
+    document.getElementById("volunteer_cpf_or_cnpj_cpf").addEventListener('click', cpfOrCnpj);
+    document.getElementById('volunteer_cpf').addEventListener('keydown', () => {
     fMasc(document.getElementById('volunteer_cpf'), mCPF);
-  });
-
-  document.getElementById('volunteer_cnpj').addEventListener('keydown', () => {
+    });
+    document.getElementById('volunteer_cnpj').addEventListener('keydown', () => {
     fMasc(document.getElementById('volunteer_cnpj'), mCNPJ);
-  });
-
-  document.getElementById('volunteer_phone').addEventListener('keydown', () => {
+    });
+    document.getElementById('volunteer_phone').addEventListener('keydown', () => {
     fMasc(document.getElementById('volunteer_phone'), mPhone);
-  });
+    });
+  }
+  
+  changeTabs();
+  
 })
 

@@ -40,7 +40,6 @@ import { changeTabs } from '../components/tabs';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  changeTabs();
   initMapbox();
   initSweetalert('#sweet-alert-demo', {
     title: "Pedido de doação enviado!",
@@ -52,4 +51,5 @@ document.addEventListener('turbolinks:load', () => {
       link.click();
     }
   });
+  changeTabs();
 })

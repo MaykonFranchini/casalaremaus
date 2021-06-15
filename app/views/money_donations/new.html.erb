@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for(@money_donation) do |f| %>
+    <%= f.input :name, label: 'Quem está doando?', class: "form-group" %>
+    <%= f.input :telephone, label: 'Poderia nos informar seu telefone?', class: "form-group" %>
+    <%= f.input :email, label: 'Poderia nos informar seu e-mail?', class: "form-group" %>
+    <%= f.input :amount, label: 'Quanto você gostaria de doar?', class: "form-group" %>
+    <%= f.button :submit, "Confirmar e doar", class: "button-banner" %>
+  <% end %>
+</div>

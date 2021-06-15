@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'checkout', to: 'pages#checkout', as: :checkout
   get 'download', to: 'pages#download', as: :download
   get 'contact', to: 'pages#contact', as: :contact
+  post 'donation_notification', to: 'money_donations#notification', as: :donation_notification
+  resources :money_donations, only: [:new, :create, :index]
   resources :orders, except: [:index, :destroy] do
     resources :items, only: [:create, :destroy]
   end

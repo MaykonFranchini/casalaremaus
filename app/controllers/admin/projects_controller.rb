@@ -1,4 +1,5 @@
 class Admin::ProjectsController < ApplicationController
+  before_action :set_project, only: [:edit, :update, :destroy]
     def new
       @project = Project.new
     end
@@ -14,10 +15,26 @@ class Admin::ProjectsController < ApplicationController
     end
 
     def edit
-      @project = Project.find(params[:id])
+    end
+
+    def update
+      if @project.update(project_params)
+        redirect_to dashboard_adm_path
+      else
+        render 'edit'
+      end
+    end
+
+    def destroy
+      @project.destroy
+      redirect_to dashboard_adm_path
     end
 
     private
+
+    def set_project
+      @project = Project.find(params[:id])
+    end
 
     def project_params
       params.require(:project).permit(:name, :description, :photo)

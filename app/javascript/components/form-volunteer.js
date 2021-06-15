@@ -12,9 +12,7 @@ const cpfOrCnpj = () => {
   }
 };
 
-const fMasc = (objeto, mascara) => {
-  const obj = objeto
-  const masc = mascara
+const fMasc = (obj, masc) => {
   setTimeout(() => {
     obj.value = masc(obj.value)
   }, 1);

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: :about
   get 'transfer', to: 'pages#transfer', as: :transfer
   get 'checkout', to: 'pages#checkout', as: :checkout
-  get 'pages/download', as: :download
+  get 'download', to: 'pages#download', as: :download
   get 'contact', to: 'pages#contact', as: :contact
   resources :orders, except: [:index, :destroy] do
     resources :items, only: [:create, :destroy]

@@ -9,7 +9,7 @@ class VolunteersController < ApplicationController
       @solicitation.save
       redirect_to projects_path
     else
-      redirect_to project_path(@project)
+      render "projects/show"
     end
   end
 

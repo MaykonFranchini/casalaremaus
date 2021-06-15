@@ -8,7 +8,6 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(set_orders)
     if @order.save
-      UserMailer.with(order: @order).order.deliver_now
       redirect_to order_path(@order)
     else
       render :new
@@ -17,6 +16,12 @@ class OrdersController < ApplicationController
 
   def show
     @item = Item.new
+  end
+
+  def mailer
+    @order = Order.find(params[:order_id])
+    UserMailer.with(order: @order).order.deliver_now
+    redirect_to contact_path
   end
 
   private

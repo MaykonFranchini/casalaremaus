@@ -37,6 +37,10 @@ gem 'geocoder'
 #mailing
 gem 'letter_opener', group: :development
 
+# Postmark mail sender
+gem 'postmark-rails'
+
+# devise to control user login/logout/sign in
 gem 'devise'
 # User Cloudinary to upload and show images/videos
 gem 'cloudinary', '~> 1.16.0'

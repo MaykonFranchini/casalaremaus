@@ -22,9 +22,30 @@
               <h2>This is Doações section</h2>
               <p>jijaoiajsoiajasoijsaoisajoisajasoi</p>
             </div>
-            <div  class="body">
-              <h2>Aqui são os voluntários</h2>
-              <p>jijaoiajsoiajasoijsaoisajoisajasoi</p>
+            <div  class="body volunteer-body">
+
+
+                <section class="volunteer-header">
+                <h2> Voluntários Casa Lar Emaús</h2>
+                <%= link_to 'Cadastrar um voluntário', new_admin_project_path, class:"button-banner left-margin" %>
+              </section>
+              <section class="wrapper">
+                <% @volunteers.each do |volunteer| %>
+                    <section class="item">
+                      <h3><%= volunteer.name %></h3>
+                      <aside class="links-clean">
+                        <%= link_to edit_admin_project_path(volunteer) do %>
+                          <i class="far fa-edit"></i>
+                        <% end %>
+                        <%= link_to admin_project_path(volunteer), method: "delete" do %>
+                          <i class="far fa-trash-alt"></i>
+                        <% end %>
+                      </aside>
+                    </section>
+                <% end %>
+              </section>
+             
+
             </div>
             <div class="body project-body">
               <section class="project-header">

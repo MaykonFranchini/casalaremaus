@@ -52,20 +52,21 @@ document.addEventListener('turbolinks:load', () => {
       link.click();
     }
   });
+
+  document.getElementById("volunteer_cpf_or_cnpj_cnpj").addEventListener('click', cpfOrCnpj);
+
+  document.getElementById("volunteer_cpf_or_cnpj_cpf").addEventListener('click', cpfOrCnpj);
+
+  document.getElementById('volunteer_cpf').addEventListener('keydown', () => {
+    fMasc(document.getElementById('volunteer_cpf'), mCPF);
+  });
+
+  document.getElementById('volunteer_cnpj').addEventListener('keydown', () => {
+    fMasc(document.getElementById('volunteer_cnpj'), mCNPJ);
+  });
+
+  document.getElementById('volunteer_phone').addEventListener('keydown', () => {
+    fMasc(document.getElementById('volunteer_phone'), mPhone);
+  });
 })
 
-document.getElementById("volunteer_cpf_or_cnpj_cnpj").addEventListener('click', cpfOrCnpj);
-
-document.getElementById("volunteer_cpf_or_cnpj_cpf").addEventListener('click', cpfOrCnpj);
-
-document.getElementById('volunteer_cpf').addEventListener('keydown', () => {
-  fMasc(document.getElementById('volunteer_cpf'), mCPF);
-});
-
-document.getElementById('volunteer_cnpj').addEventListener('keydown', () => {
-  fMasc(document.getElementById('volunteer_cnpj'), mCNPJ);
-});
-
-document.getElementById('volunteer_phone').addEventListener('keydown', () => {
-  fMasc(document.getElementById('volunteer_phone'), mPhone);
-});

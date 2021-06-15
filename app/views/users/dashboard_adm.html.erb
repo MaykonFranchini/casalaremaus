@@ -26,18 +26,18 @@
 
 
                 <section class="volunteer-header">
-                <h2> Voluntários Casa Lar Emaús</h2>
-                <%= link_to 'Cadastrar um voluntário', new_admin_project_path, class:"button-banner left-margin" %>
-              </section>
+                  <h2> Voluntários Casa Lar Emaús</h2>
+                </section>
               <section class="wrapper">
                 <% @volunteers.each do |volunteer| %>
-                    <section class="item">
+                    <section class="item item-volunteer">
                       <h3><%= volunteer.name %></h3>
+                      <p><%= volunteer.email %></p>
                       <aside class="links-clean">
-                        <%= link_to edit_admin_project_path(volunteer) do %>
+                        <%= link_to edit_admin_volunteer_path(volunteer) do %>
                           <i class="far fa-edit"></i>
                         <% end %>
-                        <%= link_to admin_project_path(volunteer), method: "delete" do %>
+                        <%= link_to admin_volunteer_path(volunteer), method: :delete do %>
                           <i class="far fa-trash-alt"></i>
                         <% end %>
                       </aside>

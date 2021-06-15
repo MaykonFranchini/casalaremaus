@@ -98,3 +98,22 @@
         color:white;
     }
 }
+
+.project-header{
+    display: flex;
+    margin: 50px 0;
+}
+
+.project-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-margin{
+    margin-left: 200px;
+}
+
+.donation-body{
+    width: 100%;
+}

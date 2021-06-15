@@ -17,4 +17,4 @@ const changeTabs = () => {
     };
   }
   
-  export { changeTabs };
+export { changeTabs };

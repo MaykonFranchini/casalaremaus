@@ -6,7 +6,7 @@
           <div class="col-sm-12 col-md-8">
             <div class="form-volunteer-box py-5">
               <%= simple_form_for(@project) do |f| %>
-                <%= f.input :name, label: 'Qual seria o nome dessa parceria ou projeto?', class: "form-group" %>
+                <%= f.input :name, label: 'Se', class: "form-group" %>
                 <%= f.input :description, label: 'Por favor, descreva mais sua ideia e deixe um meio de contato (telefone, e-mail, etc.).', class: "form-group" %>
                 <%= f.input :photo, as: :file %>
                 <%= f.button :submit, "Enviar minha proposta", class: "button-banner" %>

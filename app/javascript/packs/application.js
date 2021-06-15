@@ -38,9 +38,12 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 
+import { changeTabs } from '../components/tabs';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  changeTabs();
   initMapbox();
   initSweetalert('#sweet-alert-demo', {
     title: "Pedido de doação enviado!",

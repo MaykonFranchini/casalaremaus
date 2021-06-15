@@ -10,10 +10,13 @@ Rails.application.routes.draw do
     resources :items, only: [:create, :destroy]
   end
   resources :donations
-  resources :projects do
+  resources :projects, except: [:destroy] do
     resources :volunteers, only: [:create]
   end
   resources :solicitations, only: :destroy
   get 'dashboard', to: 'users#dashboard_adm', as: :dashboard_adm
   get 'userdashboard', to: 'users#dashboard_user', as: :dashboard_user
+  namespace :admin do
+    resources :projects, except: [:index, :show]
+  end
 end

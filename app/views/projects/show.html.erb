@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <%= f.input :marital_status, collection: Volunteer::MAR_STATUS, label: "Estado civil:" %>
+                    <%= f.input :marital_status, collection: Volunteer::MAR_STATUS, label: "Estado civil:", include_blank: "(Selecione seu estado civil)" %>
                   </div>
                   <div class="form-group col-md-6">
                     <%= f.input :date_of_birth, as: :date, max: "01-01-2006", min: "01-01-1930", html5: true, label: "Data de Nascimento:" %>
@@ -63,7 +63,7 @@
                   </div>
                 
                   <div class="col-md-3">
-                    <%= f.input :experience, collection: ['Sim', 'Não'], label: "Experiência:" %>
+                    <%= f.input :experience, collection: ['Sim', 'Não'], label: "Experiência:", include_blank: "(Selecione)" %>
                   </div>
                 </div>
                 <div class="btn-volunteer-box mt-5 text-center">

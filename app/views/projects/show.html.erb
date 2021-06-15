@@ -42,7 +42,7 @@
                   <div class="form-group col-md-6" id="cpf-cnpj-input">
                     <div id="cpf-box" style="display:;">
                      
-                      <%= f.input :cpf, label: "CPF:" %>
+                      <%= f.input :cpf, label: "CPF:", input_html: { maxlength: 14 } %>
                       </div>
                     <div id="cnpj-box" style="display: none;">
                       

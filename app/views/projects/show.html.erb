@@ -29,7 +29,7 @@
                     <%= f.input :marital_status, collection: Volunteer::MAR_STATUS, label: "Estado civil:", include_blank: "(Selecione seu estado civil)" %>
                   </div>
                   <div class="form-group col-md-6">
-                    <%= f.input :date_of_birth, as: :date, max: "01-01-2006", min: "01-01-1930", html5: true, label: "Data de Nascimento:" %>
+                    <%= f.input :date_of_birth, as: :date, html5: true, label: "Data de Nascimento:", input_html: { max: "01-01-2006", min: "01-01-1930" } %>
                   </div>
                 </div>
 

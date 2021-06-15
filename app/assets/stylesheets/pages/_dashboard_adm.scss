@@ -68,7 +68,7 @@
     border: 1px solid #ddd;
     display: flex;
     overflow-x: auto;
-    width: 45%;
+    width: 75%;
     .item{
         min-width: 200px;
         border-radius: 10px;
@@ -89,4 +89,12 @@
 
 .wrapper::-webkit-scrollbar {
     width: 0;
+}
+
+.links-clean{
+    text-decoration: none;
+    a{
+        text-decoration: none;
+        color:white;
+    }
 }

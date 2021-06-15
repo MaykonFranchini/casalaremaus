@@ -38,11 +38,13 @@
                     <section class="item default-image-project">
                   <% end %>
                       <h3><%= project.name%></h3>
-                      <aside>
+                      <aside class="links-clean">
                         <%= link_to edit_admin_project_path(project) do %>
-                        <i class="far fa-edit"></i>
+                          <i class="far fa-edit"></i>
                         <% end %>
-                        <i class="far fa-trash-alt"></i>
+                        <%= link_to admin_project_path(project), method: "delete" do %>
+                          <i class="far fa-trash-alt"></i>
+                        <% end %>
                       </aside>
                     </section>
                 <% end %>

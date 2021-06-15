@@ -1,21 +1,24 @@
-<p>Olá <%= @order.name %>,</p>
+<div class="container">
+  <h1>Olá <%= @order.name %>,</h1>
 
-<p>Obrigado pela doação!</p>
-<p>Confira abaixo os item doados:</p>
-<table>
-   <tr>
-    <th>Quantidade</th>
-    <th>Descrição</th>
-  </tr>
-  <% @order.items.each do |item| %>
-  <tr><td><%= item.quantity%></td>
-      <td><%= item.donation.name %></td>
-  </tr>
-  <% end %>
-</table>
+  <p>Obrigado pela doação!</p>
+  <p>Confira abaixo os item doados:</p>
+  <table>
+     <tr>
+      <th>Quantidade</th>
+      <th>Descrição</th>
+    </tr>
+    <% @order.items.each do |item| %>
+    <tr><td><%= item.quantity%></td>
+        <td><%= item.donation.name %></td>
+    </tr>
+    <% end %>
+  </table>
 
-<p>Você pode direcionar os itens para o endereço abaixo:</p>
-<p>Rua Eurico Hosterno, 321 - Santa Mônica. Florianópolis/SC - CEP: 88035-400</p>
-<p>Horário de funcionamento: Seg a Sex, 08hs as 18hs</p>
+  <p>Você pode direcionar os itens para o endereço abaixo:</p>
+  <p>Rua Eurico Hosterno, 321 - Santa Mônica. Florianópolis/SC - CEP: 88035-400</p>
+  <p>Horário de funcionamento: Seg a Sex, 08hs as 18hs</p>
 
-<p>Casa lar!</p>
+  <p>Casa lar!</p>
+
+</div>

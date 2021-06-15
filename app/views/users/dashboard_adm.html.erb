@@ -4,35 +4,52 @@
       <h1>Hi adm</h1>
         <div class="tabs">
           <div class="tab-header">
-            <div class="active">
+            <div class="header active">
               <i class="fas fa-people-carry"></i> Doações
             </div>
-            <div>
+            <div class="header">
               <i class="fas fa-hand-holding-heart"></i> Voluntários
             </div>
-            <div>
+            <div class="header">
               <i class="fas fa-file-signature"></i> Projetos/Parcerias
             </div>
-            <div>
+            <div class="header">
               <i class="fas fa-address-book"></i> Contatos
             </div>
           </div>
           <div class="tab-indicator"></div>
           <div class="tab-body">
-            <div class="active">
+            <div class="body active">
               <h2>This is Doações section</h2>
               <p>jijaoiajsoiajasoijsaoisajoisajasoi</p>
             </div>
-            <div>
+            <div  class="body">
               <h2>Aqui são os voluntários</h2>
               <p>jijaoiajsoiajasoijsaoisajoisajasoi</p>
             </div>
-            <div>
+            <div class="body">
               <h2>Aqui são Projetos/Parcerias</h2>
-              <p>jijaoiajsoiajasoijsaoisajoisajasoi</p>
               <%= link_to 'Criar um Projeto', new_admin_project_path %>
+              <section class="wrapper">
+                <% @projects.each do |project| %>
+                  <%if project.photo.present? %>
+                    <section class="item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.photo.key %>')">
+                  <% else %>
+                    <section class="item default-image-project">
+                  <% end %>
+                      <h3><%= project.name%></h3>
+                      <aside>
+                        <%= link_to edit_admin_project_path(project) do %>
+                        <i class="far fa-edit"></i>
+                        <% end %>
+                        <i class="far fa-trash-alt"></i>
+                      </aside>
+                    </section>
+                <% end %>
+              </section>
+             
             </div>
-            <div>
+            <div class="body">
               <h2>Aqui são Contatos</h2>
               <p>jijaoiajsoiajasoijsaoisajoisajasoi</p>
             </div>

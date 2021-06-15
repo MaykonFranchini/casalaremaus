@@ -15,13 +15,13 @@
             <div class="form-volunteer-box py-5">
 
               <%= simple_form_for [@project, @volunteer] do |f| %>
-                <%= f.input :name, label: 'Nome:' %>
+                <%= f.input :name, label: 'Nome:', placeholder: "Digite seu nome completo" %>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <%= f.input :email, label: "Email:" %>
+                    <%= f.input :email, placeholder: "email@exemplo.com", label: "Email:" %>
                   </div>
                   <div class="form-group col-md-6">
-                    <%= f.input :phone, label: "Contato:", input_html: { maxlength: 14 } %>
+                    <%= f.input :phone, label: "Contato:", placeholder: "(99)99999-9999", input_html: { maxlength: 14 } %>
                   </div>
                 </div>
                 <div class="form-row">
@@ -42,11 +42,11 @@
                   <div class="form-group col-md-6" id="cpf-cnpj-input">
                     <div id="cpf-box" style="display:;">
                      
-                      <%= f.input :cpf, label: "CPF:", input_html: { maxlength: 14 } %>
+                      <%= f.input :cpf, label: "CPF:", placeholder: "999.999.999-99", input_html: { maxlength: 14 } %>
                       </div>
                     <div id="cnpj-box" style="display: none;">
                       
-                      <%= f.input :cnpj, label: "CNPJ:", input_html: { maxlength: 18 } %>
+                      <%= f.input :cnpj, label: "CNPJ:", placeholder: "99.999.999/9999-99", input_html: { maxlength: 18 } %>
                     </div>
                   </div>
                 </div>

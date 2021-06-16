@@ -11,18 +11,15 @@
     <div class="contact-div col-4">
       <div class="form-div">
         <h1>Fique por dentro das novidades</h1>
-        <form class="form-volunteer-box">
-          <div class="form-group">
-            <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" placeholder="Insira seu nome">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">E-mail</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu email">
-          </div>
-          <button type="submit" class="button-newsletter">Enviar</button>
-        </form>
-      </div>
+        <%= simple_form_for(@reader) do |f| %>
+          <%= f.input :first_name, label: 'Nome:', placeholder: "Digite seu nome" %>
+          <%= f.input :last_name, label: 'Sobrenome:', placeholder: "Digite seu sobrenome" %>
+          <%= f.input :email, placeholder: "email@exemplo.com", label: "E-mail:" %>
+          <%= f.button :submit, "Enviar", id: 'sweet-alert-news', class: 'button-donation-submit' %>
+          <%= link_to "", root_path, id: "submit-link-news", class: "hidden" %>
+
+          <% end %>
+         </div>
       <hr>
       <div class="contact-info">
         <h2>Contato</h2>
@@ -33,5 +30,5 @@
         </ul>
       </div>
     </div>
- </div>
+  </div>
 </div>

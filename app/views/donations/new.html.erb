@@ -12,7 +12,8 @@
           <%= f.input :name, label: 'Qual o nome do novo item?', class: "form-group" %>
           <%= f.input :quantity, label: 'Qual a quantidade necessária?', class: "form-group" %>
           <%= f.input :description, label: 'Qual a unidade de medida (litros, unidades, etc) e descrição do item?', class: "form-group" %>
-          <%= f.input :donation_tag, as: :select, collection: Donation::TAGS %>
+          <%= f.input :donation_tag, as: :select, collection: Donation::TAGS, label: "Qual a natureza desse item?" %>
+          <%= f.input :status, label: 'Você precisa desse item esse mês?', class: "form-group" %>
           <%= f.button :submit, "Adicionar item", class: "button-banner" %>
         <% end %>
       </div>

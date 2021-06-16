@@ -6,12 +6,12 @@
 
   i {
     font-size: 26px;
-    color: white;
+    color: $dark-green;
     padding: 5px;
   }
   
   h2, h3, p {
-    color: white;
+    color: $dark-green;
   }
 
   i:hover {
@@ -35,14 +35,16 @@
     list-style: none;
   }
   a {
-    color: white;
+    color: $dark-green;
     text-decoration: none;
   }
   a:hover {
     color: $dark-green;
+    opacity: 50%;
   }
   i:hover {
     color: $dark-green;
+    opacity: 50%;
   }
 }
 

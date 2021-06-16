@@ -1,5 +1,5 @@
 class Volunteer < ApplicationRecord
-  has_many :solicitations
+  has_many :solicitations, dependent: :destroy
   MAR_STATUS = ['Solteiro(a)', 'Casado(a)', 'Separado(a)', 'Divorciado(a)', 'Viúvo(a)']
 
   validates :name, :email, :phone, :skills, :availability, :experience, :cpf_or_cnpj, presence: true

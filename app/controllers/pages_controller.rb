@@ -6,11 +6,14 @@ class PagesController < ApplicationController
   def about
   end
 
+
   def download
     send_file 'app/assets/public/autorizacao-nova.doc', type: "document/doc", :x_sendfile=>true
   end
 
   def contact
+    @reader = Reader.new
+
     @marker = {
       lat: -27.591153,
       lng: -48.504397,

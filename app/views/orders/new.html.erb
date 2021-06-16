@@ -10,10 +10,18 @@
           <div class="col-sm-12 col-md-8">
             <div class="form-volunteer-box py-5">
               <%= simple_form_for(@order) do |f| %>
-                <%= f.input :name %>
-                <%= f.input :email %>
-                <%= f.input :phone %>
-                <%= f.button :submit, "Escolher os items para doar", class: "button-donation-submit"  %>
+                <%= f.input :name, label: 'Nome:', placeholder: "Digite seu nome completo" %>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <%= f.input :email, placeholder: "email@exemplo.com", label: "Email:" %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= f.input :phone, label: "Contato:", placeholder: "(99)99999-9999", input_html: { maxlength: 14, id: 'form_phone' } %>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <%= f.button :submit, "Escolher os items para doar", class: "button-donation-submit"  %>
+                </div>
               <% end %>
             </div>
           </div>

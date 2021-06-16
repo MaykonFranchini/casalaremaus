@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, only: [:destroy, :edit, :update]
 
   def index
-    @projects = Project.all
+    @projects = Project.where(status: true)
   end
 
   def new

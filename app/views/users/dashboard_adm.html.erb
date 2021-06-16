@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col my-5">
         <div class="tabs">
           <div class="tab-header">
             <div class="header active">
-              <i class="fas fa-people-carry"></i> Doações
+              <i class="fas fa-people-carry"></i> Items Doações
             </div>
             <div class="header">
               <i class="fas fa-hand-holding-heart"></i> Voluntários
@@ -13,7 +13,7 @@
               <i class="fas fa-file-signature"></i> Projetos/Parcerias
             </div>
             <div class="header">
-              <i class="fas fa-address-book"></i> Contatos
+              <i class="fas fa-address-book"></i> Doações ofertadas
             </div>
           </div>
           <div class="tab-indicator"></div>
@@ -23,7 +23,7 @@
                 <h2>Items - Doações</h2>
                 <%= link_to 'Inserir novo item', new_donation_path, class:"button-banner left-margin" %>
               </section>
-              <section class="cem-width">
+              <section class="cem-width overflow-scroll">
                 <table class="content-table">
                   <thead>
                     <tr>
@@ -45,7 +45,7 @@
                                   <% else %>
                                     <td> Não Precisamos agora </td>
                                   <% end %>
-                                <td>
+                                <td  class="links-clean-green">
                                   <%= link_to edit_donation_path(donation) do %>
                                     <i class="far fa-edit"></i>
                                   <% end %>
@@ -59,9 +59,43 @@
                   </table>
               </section>
             </div>
-            <div class="body">
-              <h2>Aqui são os voluntários</h2>
-              <p>jijaoiajsoiajasoijsaoisajoisajasoi</p>
+            <div class="body align-body">
+              <section class="project-header">
+                <h2>Voluntários Casa Lar Emaús</h2>
+              </section>
+              <section class="cem-width overflow-scroll">
+                <table class="content-table">
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>Contato</th>
+                      <th>Disponibilidade</th>
+                      <th>Natureza Jurídica</th>
+                      <th> Editar/Excluir </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @volunteers.each do |volunteer|%>
+                      <tr>
+                        <td><%= volunteer.name %></td>
+                        <td><%= volunteer.email %></td>
+                        <td><%= volunteer.phone %></td>
+                        <td><%= volunteer.availability.capitalize %></td>
+                        <td><%= volunteer.cpf_or_cnpj.upcase %></td>
+                        <td class="links-clean-green" >
+                          <%= link_to edit_admin_volunteer_path(volunteer) do %>
+                            <i class="far fa-edit"></i>
+                          <% end %>
+                          <%= link_to admin_volunteer_path(volunteer), method: :delete do %>
+                            <i class="far fa-trash-alt"></i>
+                          <% end %>
+                        </td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </section>
             </div>
             <div class="body align-body">
               <section class="project-header">
@@ -76,7 +110,7 @@
                     <section class="item default-image-project">
                   <% end %>
                       <h3><%= project.name%></h3>
-                      <aside class="links-clean">
+                      <aside class="links-clean-white">
                         <%= link_to edit_admin_project_path(project) do %>
                           <i class="far fa-edit"></i>
                         <% end %>
@@ -84,14 +118,54 @@
                           <i class="far fa-trash-alt"></i>
                         <% end %>
                       </aside>
+                      <aside>
+                        <% if project.status == true %>
+                          <%= link_to "Ativo", edit_admin_project_path(project), class: "btn btn-success" %>
+                        <% else %>
+                          <%= link_to "Desativado", edit_admin_project_path(project), class: "btn btn-danger" %>
+                        <% end %>
+                      </aside>
                     </section>
                 <% end %>
               </section>
-             
             </div>
-            <div class="body">
-              <h2>Aqui são Contatos</h2>
-              <p>jijaoiajsoiajasoijsaoisajoisajasoi</p>
+            <div class="body align-body">
+              <section class="project-header">
+                <h2> Dados sobre as doações ofertadas</h2>
+              </section>
+              <section class="cem-width overflow-scroll">
+                <table class="content-table">
+                  <thead>
+                    <tr>
+                      <th>Nome do doador</th>
+                      <th>Email do doador</th>
+                      <th>Telefone do doador</th>
+                      <th>Itens oferecidos para doação</th>
+                      <th> Editar/Excluir </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @orders.each do |order|%>
+                      <tr>
+                        <td><%= order.name %></td>
+                        <td><%= order.email %></td>
+                        <td><%= order.phone %></td>
+                        <td>
+                          <% order.items.each do |item| %>
+                          <%= "#{item.donation.name} - quantidade oferecida: #{item.quantity}" %>
+                          <br>
+                          <% end %>
+                        </td>
+                        <td class="links-clean-green" >
+                          <%= link_to order_path(order), method: :delete do %>
+                            <i class="far fa-trash-alt"></i>
+                          <% end %>
+                        </td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </section>
             </div>
           </div>
         </div>

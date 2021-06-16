@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :find_order, only: [:show]
+  before_action :find_order, only: [:show, :destroy]
   before_action :authenticate_user!, only: [:destroy, :index]
   def new
     @order = Order.new
@@ -22,6 +22,11 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:order_id])
     UserMailer.with(order: @order).order.deliver_now
     redirect_to contact_path
+  end
+
+  def destroy
+    @order.destroy
+    redirect_to dashboard_adm_path
   end
 
   private

@@ -3,6 +3,7 @@ class DonationsController < ApplicationController
 
   def index
     @donations = Donation.all
+    @donations = @donations.order("donation_tag")
   end
 
   def new

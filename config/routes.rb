@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   get 'transfer', to: 'pages#transfer', as: :transfer
   get 'pages/download', as: :download
   get 'contact', to: 'pages#contact', as: :contact
+<<<<<<< HEAD
   post 'readers', to: 'readers#create'
   resources :orders, except: [:index, :destroy] do
+=======
+  resources :orders, except: :index do
+>>>>>>> master
       get 'mailer', to: 'orders#mailer', as: :mailer
     resources :items, only: [:create, :destroy]
   end
@@ -20,5 +24,6 @@ Rails.application.routes.draw do
   get 'userdashboard', to: 'users#dashboard_user', as: :dashboard_user
   namespace :admin do
     resources :projects, except: [:index, :show]
+    resources :volunteers, only: [:edit, :update, :destroy]
   end
 end

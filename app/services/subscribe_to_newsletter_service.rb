@@ -10,10 +10,10 @@ class SubscribeToNewsletterService
       body: {
         email_address: @user.email,
         status: "subscribed",
-        # merge_fields: {
-        #   FNAME: @user.first_name,
-        #   LNAME: @user.last_name
-        # }
+        merge_fields: {
+          FNAME: @reader.first_name,
+          LNAME: @reader.last_name
+        }
       }
     )
   end

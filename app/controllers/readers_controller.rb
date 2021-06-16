@@ -11,6 +11,6 @@ class ReadersController < ApplicationController
   private
 
   def reader_params
-    params.require(:reader).permit(:name, :email)
+    params.require(:reader).permit(:first_name, :last_name, :email)
   end
 end

@@ -1,6 +1,6 @@
 class Reader < ApplicationRecord
   after_create :subscribe_to_newsletter
-  validates :email, :name, presence: true
+  validates :email, :first_name, :last_name, presence: true
 
   private
 

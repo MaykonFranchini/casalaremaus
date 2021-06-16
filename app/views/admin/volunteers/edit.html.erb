@@ -19,17 +19,26 @@
 
   <div class="form-row">
     <div class="col-md-6">
-      <%= f.collection_radio_buttons :cpf_or_cnpj, [['cpf', 'CPF'], ['cnpj', 'CNPJ']], :first, :last, { checked: "cpf" } do |b| %>
+      <%= f.collection_radio_buttons :cpf_or_cnpj, [['cpf', 'CPF'], ['cnpj', 'CNPJ']], :first, :last, { checked: @volunteer.cpf_or_cnpj } do |b| %>
         <%= b.label { b.radio_button + " " + b.text } %><br>
       <% end %>
     </div>
     <div class="form-group col-md-6" id="cpf-cnpj-input">
-      <div id="cpf-box" style="display:;">
-        <%= f.input :cpf, label: "CPF:", placeholder: "999.999.999-99", input_html: { maxlength: 14 } %>
-      </div>
-      <div id="cnpj-box" style="display: none;">
-        <%= f.input :cnpj, label: "CNPJ:", placeholder: "99.999.999/9999-99", input_html: { maxlength: 18 } %>
-      </div>
+      <% if @volunteer.cpf_or_cnpj == 'cpf' %>
+        <div id="cpf-box" style="display:;">
+          <%= f.input :cpf, label: "CPF:", placeholder: "999.999.999-99", input_html: { maxlength: 14 } %>
+        </div>
+        <div id="cnpj-box" style="display: none;">
+          <%= f.input :cnpj, label: "CNPJ:", placeholder: "99.999.999/9999-99", input_html: { maxlength: 18 } %>
+        </div>
+      <% else %>
+        <div id="cpf-box" style="display:none;">
+          <%= f.input :cpf, label: "CPF:", placeholder: "999.999.999-99", input_html: { maxlength: 14 } %>
+        </div>
+        <div id="cnpj-box" style="display:;">
+          <%= f.input :cnpj, label: "CNPJ:", placeholder: "99.999.999/9999-99", input_html: { maxlength: 18 } %>
+        </div>
+      <% end %>
     </div>
   </div>
 

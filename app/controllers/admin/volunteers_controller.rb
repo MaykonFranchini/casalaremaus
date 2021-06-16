@@ -5,7 +5,10 @@ class Admin::VolunteersController < ApplicationController
   end
 
   def update
-    if @volunteer.update(project_params)
+    
+    stringfy_availability
+    
+    if @volunteer.update!(project_params)
       redirect_to dashboard_adm_path
     else
       render 'edit'
@@ -13,7 +16,7 @@ class Admin::VolunteersController < ApplicationController
   end
   
   def destroy
-    @project.destroy
+    @volunteer.destroy
     redirect_to dashboard_adm_path
   end
 
@@ -24,6 +27,11 @@ class Admin::VolunteersController < ApplicationController
   end
   
   def project_params
-    params.require(:volunteer).permit(:name, :description, :photo)
+    params.require(:volunteer).permit(:name, :email, :phone, :marital_status, :date_of_birth, :cpf, :cnpj, :skills, :availability, :experience, :cpf_or_cnpj)
+  end
+
+  def stringfy_availability
+    params[:volunteer][:availability].shift
+    params[:volunteer][:availability] = params[:volunteer][:availability].join(', ')
   end
 end

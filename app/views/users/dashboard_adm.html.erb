@@ -68,37 +68,36 @@
                 <table class="content-table">
                   <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Contato</th>
-                        <th>Disponibilidade</th>
-                        <th>Natureza Jurídica</th>
-                        <th> Editar/Excluir </th>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>Contato</th>
+                      <th>Disponibilidade</th>
+                      <th>Natureza Jurídica</th>
+                      <th> Editar/Excluir </th>
                     </tr>
                   </thead>
                   <tbody>
                     <% @volunteers.each do |volunteer|%>
-                            <tr>
-                                <td><%= volunteer.name %></td>
-                                <td><%= volunteer.email %></td>
-                                <td><%= volunteer.phone %></td>
-                                <td><%= volunteer.availability.capitalize %></td>
-                                <td><%= volunteer.cpf_or_cnpj.upcase %></td>
-                                <td>
-                                  <%= link_to edit_admin_volunteer_path(volunteer) do %>
-                                    <i class="far fa-edit"></i>
-                                  <% end %>
-                                  <%= link_to admin_volunteer_path(volunteer), method: :delete do %>
-                                    <i class="far fa-trash-alt"></i>
-                                  <% end %>
-                                </td>
-                            </tr>
+                      <tr>
+                        <td><%= volunteer.name %></td>
+                        <td><%= volunteer.email %></td>
+                        <td><%= volunteer.phone %></td>
+                        <td><%= volunteer.availability.capitalize %></td>
+                        <td><%= volunteer.cpf_or_cnpj.upcase %></td>
+                        <td>
+                          <%= link_to edit_admin_volunteer_path(volunteer) do %>
+                            <i class="far fa-edit"></i>
+                          <% end %>
+                          <%= link_to admin_volunteer_path(volunteer), method: :delete do %>
+                            <i class="far fa-trash-alt"></i>
+                          <% end %>
+                        </td>
+                      </tr>
                     <% end %>
                   </tbody>
-                  </table>
+                </table>
               </section>
 
-                
             </div>
 
             <div class="body align-body">

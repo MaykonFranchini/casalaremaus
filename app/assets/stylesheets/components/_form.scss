@@ -1,11 +1,11 @@
-/* General form */
+/*------- General form -------*/
 
 label {
     color: gray;
     font-size: 14px;
 }
 
-/*    Volunteer form --> projects/:id    */
+/*------- Volunteer form --> projects/:id -------*/
 
 .form-header {
     margin-top: 40px;
@@ -40,23 +40,34 @@ label {
 }
 
 
-// contact page
+/*------- Contact page -------*/
+
 .contact-container {
   display: flex;
   width: 100%;
   margin-top: 40px;
+
+  .map-div {
+    width: 100%;
+    margin-right: 2%;
+  }
 }
 
 .contact-div {
-  max-width: 500px;
-  box-shadow: 2px 2px 4px gray;
+  max-width: 100%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 20px;
+}
+
+#map {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info {
   text-align: center;
   margin-top: 40px;
+
   ul {
     list-style: none;
     display: flex;
@@ -69,11 +80,12 @@ label {
     padding: 5px;
     margin-right: 10px;
   }
+
   a {
     text-decoration: none;
-  }
-  a:hover {
-    color:none;
+    &:hover {
+      color:none;
+    }
   }
 
   i {
@@ -84,10 +96,26 @@ label {
   }
 
   .whatsapp {
-    color: rgb(37, 211, 102);
+    color: $light-green;
   }
 
   .phone {
     color: $light-red;
+  }
+}
+
+@media(max-width: 768px) {
+  .contact-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    .map-div {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .contact-div {
+    margin-bottom: 6%;
+    padding: 5%;
   }
 }

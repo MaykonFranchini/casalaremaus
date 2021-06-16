@@ -46,7 +46,7 @@
 @media(max-width: 768px) {
   .cards-container {
     height: 100%;
-    margin: 5% 5%;
+    margin: 5%;
 
     .mrg {
       margin: 3% 0;
@@ -78,6 +78,10 @@
       margin: 0;
     }
   }
+}
+
+@media(min) {
+
 }
 
 /* Project cards */

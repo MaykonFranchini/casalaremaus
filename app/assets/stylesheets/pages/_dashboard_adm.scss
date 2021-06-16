@@ -98,3 +98,24 @@
         color:white;
     }
 }
+
+.project-header{
+    display: flex;
+    margin: 50px 0;
+}
+
+.align-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.left-margin{
+    margin-left: 200px;
+}
+
+.cem-width{
+    width: 100%;
+}
+

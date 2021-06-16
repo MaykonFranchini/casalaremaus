@@ -65,8 +65,15 @@ document.addEventListener('turbolinks:load', () => {
     document.getElementById('volunteer_cnpj').addEventListener('keydown', () => {
     fMasc(document.getElementById('volunteer_cnpj'), mCNPJ);
     });
-    document.getElementById('volunteer_phone').addEventListener('keydown', () => {
-    fMasc(document.getElementById('volunteer_phone'), mPhone);
+    // document.getElementById('volunteer_phone').addEventListener('keydown', () => {
+    // fMasc(document.getElementById('volunteer_phone'), mPhone);
+    // });
+  }
+
+  let phone = document.getElementById('form_phone')
+  if (phone) {
+   phone.addEventListener('keydown', () => {
+      fMasc(document.getElementById('form_phone'), mPhone);
     });
   }
 

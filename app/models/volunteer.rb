@@ -1,5 +1,5 @@
 class Volunteer < ApplicationRecord
-  has_many :solicitations
+  has_many :solicitations, dependent: :destroy
   MAR_STATUS = ['Solteiro(a)', 'Casado(a)', 'Separado(a)', 'Divorciado(a)', 'Viúvo(a)']
 
   validates :name, :email, :phone, :skills, :availability, :experience, :cpf_or_cnpj, presence: true
@@ -8,9 +8,9 @@ class Volunteer < ApplicationRecord
   validates :phone, format: { with: /([(]\d{2}[)]\d{4}\d?-\d{4})/,
     message: "O número está incompleto!" }
   validates :cpf, format: { with: /([0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2})/,
-    message: "O CPF está incompleto!" }, allow_nil: true
+    message: "O CPF está incompleto!" }, allow_blank: true
   validates :cnpj, format: { with: /([0-9]{2}[.][0-9]{3}[.][0-9]{3}[\/][0-9]{4}[-][0-9]{2})/,
-    message: "O CNPJ está incompleto!" }, allow_nil: true
+    message: "O CNPJ está incompleto!" }, allow_blank: true
   validates :email, format: { with: /(^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$)/,
     message: "O email não é válido!" }
 

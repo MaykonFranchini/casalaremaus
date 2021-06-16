@@ -59,28 +59,44 @@
                   </table>
               </section>
             </div>
-            <div  class="body volunteer-body">
 
-
-                <section class="volunteer-header">
-                  <h2> Voluntários Casa Lar Emaús</h2>
-                </section>
-              <section class="wrapper">
-                <% @volunteers.each do |volunteer| %>
-                    <section class="item item-volunteer">
-                      <h3><%= volunteer.name %></h3>
-                      <p><%= volunteer.email %></p>
-                      <aside class="links-clean">
-                        <%= link_to edit_admin_volunteer_path(volunteer) do %>
-                          <i class="far fa-edit"></i>
-                        <% end %>
-                        <%= link_to admin_volunteer_path(volunteer), method: :delete do %>
-                          <i class="far fa-trash-alt"></i>
-                        <% end %>
-                      </aside>
-                    </section>
-                <% end %>
+            <div  class="body align-body">
+              <section class="project-header">
+                <h2>Voluntários Casa Lar Emaús</h2>
               </section>
+              <section class="cem-width">
+                <table class="content-table">
+                  <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Contato</th>
+                        <th>Natureza Jurídica</th>
+                        <th> Editar/Excluir </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @volunteers.each do |volunteer|%>
+                            <tr>
+                                <td><%= volunteer.name %></td>
+                                <td><%= volunteer.email %></td>
+                                <td><%= volunteer.phone %></td>
+                                <td><%= volunteer.cpf_or_cnpj %></td>
+                                <td>
+                                  <%= link_to edit_admin_volunteer_path(volunteer) do %>
+                                    <i class="far fa-edit"></i>
+                                  <% end %>
+                                  <%= link_to admin_volunteer_path(volunteer), method: :delete do %>
+                                    <i class="far fa-trash-alt"></i>
+                                  <% end %>
+                                </td>
+                            </tr>
+                    <% end %>
+                  </tbody>
+                  </table>
+              </section>
+
+                
             </div>
 
             <div class="body align-body">

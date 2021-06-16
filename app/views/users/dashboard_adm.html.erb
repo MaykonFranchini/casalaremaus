@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col my-5">
         <div class="tabs">
           <div class="tab-header">
             <div class="header active">
@@ -45,7 +45,7 @@
                                   <% else %>
                                     <td> Não Precisamos agora </td>
                                   <% end %>
-                                <td>
+                                <td  class="links-clean-green">
                                   <%= link_to edit_donation_path(donation) do %>
                                     <i class="far fa-edit"></i>
                                   <% end %>
@@ -76,12 +76,19 @@
                     <section class="item default-image-project">
                   <% end %>
                       <h3><%= project.name%></h3>
-                      <aside class="links-clean">
+                      <aside class="links-clean-white">
                         <%= link_to edit_admin_project_path(project) do %>
                           <i class="far fa-edit"></i>
                         <% end %>
                         <%= link_to admin_project_path(project), method: "delete" do %>
                           <i class="far fa-trash-alt"></i>
+                        <% end %>
+                      </aside>
+                      <aside>
+                        <% if project.status == true %>
+                          <%= link_to "Ativo", edit_admin_project_path(project), class: "btn btn-success" %>
+                        <% else %>
+                          <%= link_to "Desativado", edit_admin_project_path(project), class: "btn btn-danger" %>
                         <% end %>
                       </aside>
                     </section>

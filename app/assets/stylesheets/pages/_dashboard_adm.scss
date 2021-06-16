@@ -73,7 +73,6 @@
         min-width: 200px;
         border-radius: 10px;
         height: 200px;
-        line-height: 110px;
         text-align: center;
         margin-right: 10px;
         background-size: cover;
@@ -82,8 +81,7 @@
         font-size: 25px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-around;
     }
 }
 
@@ -91,7 +89,15 @@
     width: 0;
 }
 
-.links-clean{
+.links-clean-green{
+    text-decoration: none;
+    a{
+        text-decoration: none;
+        color:$dark-green;
+    }
+}
+
+.links-clean-white{
     text-decoration: none;
     a{
         text-decoration: none;

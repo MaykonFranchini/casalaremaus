@@ -2,6 +2,7 @@
   <div class="cards-project">
     <div class="card-projects-header">
       <h2>Nossos projetos disponíveis:</h2>
+      <%= link_to "Tenho uma proposta", new_project_url, class: "button-banner" %>
     </div>
     <div class="row">
       <% @projects.each do |project|  %>

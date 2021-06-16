@@ -1,63 +1,78 @@
-<%= simple_form_for [:admin, @volunteer] do |f| %>
-  <%= f.input :name, label: 'Nome:', placeholder: "Digite seu nome completo" %>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <%= f.input :email, placeholder: "email@exemplo.com", label: "Email:" %>
-    </div>
-    <div class="form-group col-md-6">
-      <%= f.input :phone, label: "Contato:", placeholder: "(99)99999-9999", input_html: { maxlength: 14 } %>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <%= f.input :marital_status, collection: Volunteer::MAR_STATUS, label: "Estado civil:", include_blank: "(Selecione seu estado civil)" %>
-    </div>
-    <div class="form-group col-md-6">
-      <%= f.input :date_of_birth, as: :date, html5: true, label: "Data de Nascimento:", input_html: { max: "01-01-2006", min: "01-01-1930" } %>
-    </div>
-  </div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-10">
+      <div class="card-volunteer">
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-8">
+            <div class="form-volunteer-box py-5">
+              <h2>Editar informações:</h2><br>
+              <%= simple_form_for [:admin, @volunteer] do |f| %>
+                <%= f.input :name, label: 'Nome:', placeholder: "Digite seu nome completo" %>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <%= f.input :email, placeholder: "email@exemplo.com", label: "Email:" %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= f.input :phone, label: "Contato:", placeholder: "(99)99999-9999", input_html: { maxlength: 14 } %>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <%= f.input :marital_status, collection: Volunteer::MAR_STATUS, label: "Estado civil:", include_blank: "(Selecione seu estado civil)" %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= f.input :date_of_birth, as: :date, html5: true, label: "Data de Nascimento:", input_html: { max: "01-01-2006", min: "01-01-1930" } %>
+                  </div>
+                </div>
 
-  <div class="form-row">
-    <div class="col-md-6">
-      <%= f.collection_radio_buttons :cpf_or_cnpj, [['cpf', 'CPF'], ['cnpj', 'CNPJ']], :first, :last, { checked: @volunteer.cpf_or_cnpj } do |b| %>
-        <%= b.label { b.radio_button + " " + b.text } %><br>
-      <% end %>
-    </div>
-    <div class="form-group col-md-6" id="cpf-cnpj-input">
-      <% if @volunteer.cpf_or_cnpj == 'cpf' %>
-        <div id="cpf-box" style="display:;">
-          <%= f.input :cpf, label: "CPF:", placeholder: "999.999.999-99", input_html: { maxlength: 14 } %>
-        </div>
-        <div id="cnpj-box" style="display: none;">
-          <%= f.input :cnpj, label: "CNPJ:", placeholder: "99.999.999/9999-99", input_html: { maxlength: 18 } %>
-        </div>
-      <% else %>
-        <div id="cpf-box" style="display:none;">
-          <%= f.input :cpf, label: "CPF:", placeholder: "999.999.999-99", input_html: { maxlength: 14 } %>
-        </div>
-        <div id="cnpj-box" style="display:;">
-          <%= f.input :cnpj, label: "CNPJ:", placeholder: "99.999.999/9999-99", input_html: { maxlength: 18 } %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <%= f.collection_radio_buttons :cpf_or_cnpj, [['cpf', 'CPF'], ['cnpj', 'CNPJ']], :first, :last, { checked: @volunteer.cpf_or_cnpj } do |b| %>
+                      <%= b.label { b.radio_button + " " + b.text } %><br>
+                    <% end %>
+                  </div>
+                  <div class="form-group col-md-6" id="cpf-cnpj-input">
+                    <% if @volunteer.cpf_or_cnpj == 'cpf' %>
+                      <div id="cpf-box" style="display:;">
+                        <%= f.input :cpf, label: "CPF:", placeholder: "999.999.999-99", input_html: { maxlength: 14 } %>
+                      </div>
+                      <div id="cnpj-box" style="display: none;">
+                        <%= f.input :cnpj, label: "CNPJ:", placeholder: "99.999.999/9999-99", input_html: { maxlength: 18 } %>
+                      </div>
+                    <% else %>
+                      <div id="cpf-box" style="display:none;">
+                        <%= f.input :cpf, label: "CPF:", placeholder: "999.999.999-99", input_html: { maxlength: 14 } %>
+                      </div>
+                      <div id="cnpj-box" style="display:;">
+                        <%= f.input :cnpj, label: "CNPJ:", placeholder: "99.999.999/9999-99", input_html: { maxlength: 18 } %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
 
-  <%= f.input :skills, label: "Prática à oferecer:" %>
-  <div class="form-row">
-    <div class="col-md-9">
-      <%= f.label :availability, label: "Disponibilidade:" %>
-      <div class="availability-check">
-        <%=  f.collection_check_boxes :availability, [['segunda', 'Segunda'], ['terca', 'Terça'], ['quarta', 'Quarta'], ['quinta', 'Quinta'], ['sexta', 'Sexta'], ['sabado', 'Sábado'], ['domingo', 'Domingo']], :first, :last do |b| %>
-          <%= b.label { b.check_box(checked: ('checked' if @volunteer.availability.split(", ").include? b.value)) + " " + b.text } %>&emsp;
-        <% end %>
+                <%= f.input :skills, label: "Prática à oferecer:" %>
+                <div class="form-row">
+                  <div class="col-md-9">
+                    <%= f.label :availability, label: "Disponibilidade:" %>
+                    <div class="availability-check">
+                      <%=  f.collection_check_boxes :availability, [['segunda', 'Segunda'], ['terca', 'Terça'], ['quarta', 'Quarta'], ['quinta', 'Quinta'], ['sexta', 'Sexta'], ['sabado', 'Sábado'], ['domingo', 'Domingo']], :first, :last do |b| %>
+                        <%= b.label { b.check_box(checked: ('checked' if @volunteer.availability.split(", ").include? b.value)) + " " + b.text } %>&emsp;
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <%= f.input :experience, collection: ['Sim', 'Não'], label: "Experiência:", selected: @volunteer.experience %>
+                  </div>
+                </div>
+
+                <div class="btn-volunteer-box mt-5 text-center">
+                  <%= f.button :submit, "Confirmar alterações", class: "button-banner" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-3">
-      <%= f.input :experience, collection: ['Sim', 'Não'], label: "Experiência:", selected: @volunteer.experience %>
-    </div>
   </div>
-
-  <div class="btn-volunteer-box mt-5 text-center">
-    <%= f.button :submit, "Editar", class: 'button-donation-submit' %>
-  </div>
-<% end %>
+</div>

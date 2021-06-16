@@ -18,9 +18,46 @@
           </div>
           <div class="tab-indicator"></div>
           <div class="tab-body">
-            <div class="body active">
-              <h2>This is Doações section</h2>
-              <p>jijaoiajsoiajasoijsaoisajoisajasoi</p>
+            <div class="body active align-body">
+              <section class="project-header">
+                <h2>Items - Doações</h2>
+                <%= link_to 'Inserir novo item', new_donation_path, class:"button-banner left-margin" %>
+              </section>
+              <section class="cem-width">
+                <table class="content-table">
+                  <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade e descrição</th>
+                        <th>Categoria</th>
+                        <th>Status</th>
+                        <th> Editar/Excluir item </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @donations.each do |donation|%>
+                            <tr>
+                                <td><%= donation.name %></td>
+                                <td><%= "#{donation.quantity} #{donation.description}" %></td>
+                                <td><%= donation.donation_tag %></td>
+                                  <% if donation.status == true %>
+                                    <td> Precisamos agora </td>
+                                  <% else %>
+                                    <td> Não Precisamos agora </td>
+                                  <% end %>
+                                <td>
+                                  <%= link_to edit_donation_path(donation) do %>
+                                    <i class="far fa-edit"></i>
+                                  <% end %>
+                                  <%= link_to donation_path(donation), method: "delete" do %>
+                                    <i class="far fa-trash-alt"></i>
+                                  <% end %>
+                                </td>
+                            </tr>
+                    <% end %>
+                  </tbody>
+                  </table>
+              </section>
             </div>
             <div  class="body volunteer-body">
 
@@ -44,10 +81,9 @@
                     </section>
                 <% end %>
               </section>
-             
-
             </div>
-            <div class="body project-body">
+
+            <div class="body align-body">
               <section class="project-header">
                 <h2> Projetos Casa Lar Emaús</h2>
                 <%= link_to 'Criar um Projeto', new_admin_project_path, class:"button-banner left-margin" %>

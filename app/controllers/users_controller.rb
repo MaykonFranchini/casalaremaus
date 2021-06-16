@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def dashboard_adm
     @projects = Project.all
     @volunteers = Volunteer.all
+    @donations = Donation.all
   end
 
   def dashboard_user

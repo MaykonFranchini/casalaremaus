@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'transfer', to: 'pages#transfer', as: :transfer
   get 'pages/download', as: :download
   get 'contact', to: 'pages#contact', as: :contact
-  resources :orders, except: [:index, :destroy] do
+  post 'readers', to: 'readers#create'
+  resources :orders, except: :index do
       get 'mailer', to: 'orders#mailer', as: :mailer
     resources :items, only: [:create, :destroy]
   end

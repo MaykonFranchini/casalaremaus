@@ -55,6 +55,17 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 
+    initSweetalert('#sweet-alert-news', {
+    title: "Cadastro realizado com sucesso!",
+    text: "Em breve voce recebera noticias sobre nossos projetos e eventos.",
+    icon: "success"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#submit-link-news');
+      link.click();
+    }
+  });
+
   let cpfCnpj = document.getElementById("volunteer_cpf_or_cnpj_cnpj")
   if (cpfCnpj) {
     cpfCnpj.addEventListener('click', cpfOrCnpj);
@@ -65,8 +76,15 @@ document.addEventListener('turbolinks:load', () => {
     document.getElementById('volunteer_cnpj').addEventListener('keydown', () => {
     fMasc(document.getElementById('volunteer_cnpj'), mCNPJ);
     });
-    document.getElementById('volunteer_phone').addEventListener('keydown', () => {
-    fMasc(document.getElementById('volunteer_phone'), mPhone);
+    // document.getElementById('volunteer_phone').addEventListener('keydown', () => {
+    // fMasc(document.getElementById('volunteer_phone'), mPhone);
+    // });
+  }
+
+  let phone = document.getElementById('form_phone')
+  if (phone) {
+   phone.addEventListener('keydown', () => {
+      fMasc(document.getElementById('form_phone'), mPhone);
     });
   }
 

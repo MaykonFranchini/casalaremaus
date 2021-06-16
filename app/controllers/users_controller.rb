@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @projects = Project.all
     @volunteers = Volunteer.all
     @donations = Donation.all
+    @orders = Order.all
   end
 
   def dashboard_user

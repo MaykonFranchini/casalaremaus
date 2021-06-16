@@ -27,7 +27,17 @@
                     <tr>
                         <td><%= donation.name %></td>
                         <td><%= "#{donation.quantity} #{donation.description}" %></td>
-                        <td><%= donation.donation_tag %></td>
+                        <% if donation.donation_tag == "Alimentos" %>
+                          <td class="pink-tag-btn"><%= donation.donation_tag %></td>
+                        <% elsif donation.donation_tag == "Higiene Pessoal" %>
+                          <td class="blue-tag-btn"><%= donation.donation_tag %></td>
+                        <% elsif donation.donation_tag == "Carnes" %>
+                          <td class="yellow-tag-btn"><%= donation.donation_tag %></td>
+                        <% elsif donation.donation_tag == "Produtos de Limpeza" %>
+                          <td class="purple-tag-btn"><%= donation.donation_tag %></td>
+                        <% else %>
+                          <td class="purple-tag-btn"><%= donation.donation_tag %></td>
+                        <% end %>
                     </tr>
                 <% end %>
             <% end %>

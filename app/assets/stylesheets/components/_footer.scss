@@ -1,6 +1,6 @@
 .footer {
   margin: 40px 0 0 0;
-  background-color: #c6e5cd;
+  background-color: $light-green;
   width: 100%;
   padding: 20px;
 
@@ -8,6 +8,10 @@
     font-size: 26px;
     color: $dark-green;
     padding: 5px;
+  }
+  
+  h2, h3, p {
+    color: $dark-green;
   }
 
   i:hover {
@@ -31,11 +35,16 @@
     list-style: none;
   }
   a {
-    color: black;
+    color: $dark-green;
     text-decoration: none;
   }
   a:hover {
     color: $dark-green;
+    opacity: 50%;
+  }
+  i:hover {
+    color: $dark-green;
+    opacity: 50%;
   }
 }
 

@@ -26,6 +26,11 @@
 
   p {
     font-size: 15px;
+    margin: 0;
+  }
+
+  .conta {
+    margin-bottom: 5%;
   }
 }
 
@@ -46,7 +51,7 @@
 @media(max-width: 768px) {
   .cards-container {
     height: 100%;
-    margin: 5% 5%;
+    margin: 5%;
 
     .mrg {
       margin: 3% 0;
@@ -78,6 +83,10 @@
       margin: 0;
     }
   }
+}
+
+@media(min) {
+
 }
 
 /* Project cards */
@@ -131,6 +140,7 @@
   background-color: white;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  padding: 1% 5%;
 }
 
 

@@ -54,7 +54,6 @@ document.addEventListener('turbolinks:load', () => {
       link.click();
     }
   });
-  changeTabs();
 
   let cpfCnpj = document.getElementById("volunteer_cpf_or_cnpj_cnpj")
   if (cpfCnpj) {

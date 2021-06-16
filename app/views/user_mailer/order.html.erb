@@ -1,24 +1,44 @@
-<div class="container">
-  <h1>Olá <%= @order.name %>,</h1>
 
-  <p>Obrigado pela doação!</p>
-  <p>Confira abaixo os item doados:</p>
-  <table>
-     <tr>
-      <th>Quantidade</th>
-      <th>Descrição</th>
-    </tr>
-    <% @order.items.each do |item| %>
-    <tr><td><%= item.quantity%></td>
+<head>
+  <style>
+    h1 {font-size: 22px; color: white; padding: 25px;}
+    table {border-radius: 10px; overflow:hidden;}
+    th {padding: 10px; background-color: #009879; color: #ffffff; text-align: center; font-weight: bold;}
+    td {padding: 10px; background-color: #cecece; text-align: center;}
+  </style>
+</head>
+<body>
+
+
+<div style="max-width: 1200px; background-color: #f8f8f8; margin: 0 auto; border-radius: 10px;">
+  <div style="background-color: #118266; border-radius: 10px 10px 0 0; padding-left: 25px;">
+    <h1>Casa Lar</h1>
+  </div>
+  <div style="background-color: #f8f8f8; padding-left: 25px;">
+    <h2>Olá <%= @order.name %>,</h2>
+
+    <p>Obrigado pela sua doação!</p>
+    <p>Confira abaixo os item doados:</p>
+    <table>
+       <tr>
+        <th>Quantidade</th>
+        <th>Descrição</th>
+      </tr>
+      <% @order.items.each do |item| %>
+      <tr>
+        <td><%= item.quantity%></td>
         <td><%= item.donation.name %></td>
-    </tr>
-    <% end %>
-  </table>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 
-  <p>Você pode direcionar os itens para o endereço abaixo:</p>
-  <p>Rua Eurico Hosterno, 321 - Santa Mônica. Florianópolis/SC - CEP: 88035-400</p>
-  <p>Horário de funcionamento: Seg a Sex, 08hs as 18hs</p>
-
-  <p>Casa lar!</p>
+  <div style="padding-left: 25px; margin: 50px 0;">
+    <p>Você pode direcionar os itens para o endereço abaixo:</p>
+    <p>Rua Eurico Hosterno, 321 - Santa Mônica. Florianópolis/SC - CEP: 88035-400</p>
+    <p>Horário de funcionamento: Seg a Sex, 08hs as 18hs</p>
+    <p>Casa lar!</p>
+  </div>
 
 </div>
+</body>

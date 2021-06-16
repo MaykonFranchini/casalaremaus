@@ -9,6 +9,7 @@
                 <%= f.input :name, label: 'Nome do projeto:', class: "form-group" %>
                 <%= f.input :description, label: 'Descrição do Projeto', class: "form-group" %>
                 <%= f.input :photo, as: :file %>
+                <%= f.input :status, label: 'Esse projeto está ativo?', class: "form-group" %>
                 <%= f.button :submit, "Confirmar alterações", class: "button-banner" %>
               <% end %>
             </div>

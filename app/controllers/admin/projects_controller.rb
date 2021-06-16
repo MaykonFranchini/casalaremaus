@@ -7,7 +7,6 @@ class Admin::ProjectsController < ApplicationController
     def create
       @project = Project.new(project_params)
       if @project.save
-        @project.update(status: true)
         redirect_to projects_path
       else
         render 'new'
@@ -37,6 +36,6 @@ class Admin::ProjectsController < ApplicationController
     end
 
     def project_params
-      params.require(:project).permit(:name, :description, :photo)
+      params.require(:project).permit(:name, :status, :description, :photo)
     end
 end

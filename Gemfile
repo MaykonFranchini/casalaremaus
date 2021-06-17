@@ -37,6 +37,8 @@ gem 'open-uri'
 # Use geocoder for mappings
 gem 'geocoder'
 
+gem 'pundit'
+
 #mailing
 gem 'letter_opener', group: :development
 

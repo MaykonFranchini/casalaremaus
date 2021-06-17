@@ -2,13 +2,16 @@ class Admin::VolunteersController < ApplicationController
   before_action :set_volunteer
 
   def edit
+    @user = current_user
+    authorize @user
   end
 
   def update
-    
+    @user = current_user
+    authorize @user
     stringfy_availability
     
-    if @volunteer.update!(project_params)
+    if @volunteer.update(project_params)
       redirect_to dashboard_adm_path
     else
       render 'edit'
@@ -16,6 +19,8 @@ class Admin::VolunteersController < ApplicationController
   end
   
   def destroy
+    @user = current_user
+    authorize @user
     @volunteer.destroy
     redirect_to dashboard_adm_path
   end

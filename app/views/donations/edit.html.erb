@@ -10,7 +10,7 @@
                 <%= f.input :description, label: 'Descrição do item', class: "form-group" %>
                 <%= f.input :quantity, label: 'Quantidade necessária', class: "form-group" %>
                 <%= f.input :donation_tag, as: :select, collection: Donation::TAGS %>
-                <%= f.input :status, label: 'Você precisa desse item nesse mês?', class: "form-group" %>
+                <%= f.input :status, label: 'Precisa agora desse item?', class: "form-group" %>
                 <%= f.button :submit, "Confirmar alterações", class: "button-banner" %>
               <% end %>
             </div>

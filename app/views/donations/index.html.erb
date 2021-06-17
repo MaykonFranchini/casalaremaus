@@ -13,36 +13,52 @@
   </div>
   <div class="row">
     <div class="col" style="padding-left: 0;">
-        <table class="content-table">
+      <table class="content-table">
         <thead>
-            <tr>
-                <th>Produto</th>
-                <th>Quantidade</th>
-                <th>Categoria</th>
-            </tr>
+          <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Categoria</th>
+          </tr>
         </thead>
         <tbody>
-            <% @donations.each do |donation|%>
-                <% if donation.status != false && donation.quantity > 0 %>
-                    <tr>
-                        <td><%= donation.name %></td>
-                        <td><%= "#{donation.quantity} #{donation.description}" %></td>
-                        <% if donation.donation_tag == "Alimentos" %>
-                          <td class="pink-tag-btn"><%= donation.donation_tag %></td>
-                        <% elsif donation.donation_tag == "Higiene Pessoal" %>
-                          <td class="blue-tag-btn"><%= donation.donation_tag %></td>
-                        <% elsif donation.donation_tag == "Carnes" %>
-                          <td class="yellow-tag-btn"><%= donation.donation_tag %></td>
-                        <% elsif donation.donation_tag == "Produtos de Limpeza" %>
-                          <td class="purple-tag-btn"><%= donation.donation_tag %></td>
-                        <% else %>
-                          <td class="purple-tag-btn"><%= donation.donation_tag %></td>
-                        <% end %>
-                    </tr>
-                <% end %>
+          <% @donations.each do |donation|%>
+            <% if donation.status != false && donation.quantity > 0 %>
+              <% if donation.donation_tag == "Alimentos" %>
+                <tr class="bg-gray">
+                  <td><%= donation.name %></td>
+                  <td><%= "#{donation.quantity} #{donation.description}" %></td>
+                  <td><%= donation.donation_tag %></td>
+                </tr>
+              <% elsif donation.donation_tag == "Higiene Pessoal" %>
+                <tr class="bg-gray">
+                  <td><%= donation.name %></td>
+                  <td><%= "#{donation.quantity} #{donation.description}" %></td>
+                  <td><%= donation.donation_tag %></td>
+                </tr>
+              <% elsif donation.donation_tag == "Carnes" %>
+                <tr class="bg-white">
+                  <td><%= donation.name %></td>
+                  <td><%= "#{donation.quantity} #{donation.description}" %></td>
+                  <td><%= donation.donation_tag %></td>
+                </tr>
+              <% elsif donation.donation_tag == "Produtos de Limpeza" %>
+                <tr class="bg-gray">
+                  <td><%= donation.name %></td>
+                  <td><%= "#{donation.quantity} #{donation.description}" %></td>
+                  <td><%= donation.donation_tag %></td>
+                </tr>
+              <% else %>
+                <tr class="bg-white">
+                  <td><%= donation.name %></td>
+                  <td><%= "#{donation.quantity} #{donation.description}" %></td>
+                  <td><%= donation.donation_tag %></td>
+                </tr>
+              <% end %>
             <% end %>
+          <% end %>
         </tbody>
-        </table>
+      </table>
     </div>
   </div>
 </div>

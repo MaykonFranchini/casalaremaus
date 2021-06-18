@@ -28,7 +28,7 @@
             <% end %>
             <div class="item-content">
               <h3><%= item.donation.name %></h3>
-              <p>Quantity: <%= item.quantity %></p>
+              <p>Quantidade: <%= item.quantity %></p>
             </div>
             <%= link_to '<i class="fas fa-times delete-icon"></i>'.html_safe, order_item_path(item), method: :delete %>
           </div>

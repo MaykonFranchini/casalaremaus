@@ -46,7 +46,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initSweetalert('#sweet-alert-demo', {
     title: "Pedido de doação enviado!",
-    text: "Estaremos aguardando a doação em nosso endereço, obrigada!",
+    text: "Obrigada! Em instantes você receberá um email com as informações de envio.",
     icon: "success"
   }, (value) => {
     if (value) {

@@ -16,11 +16,17 @@ git clone https://github.com/belisabettega/casalaremaus
 rbenv install 2.6.6
 rbenv global 2.6.6
 ```
-6) Install Rails 6.0.3.7
+6) Install Rails 6.0.3.7 (Never do sudo gem install rails even if the terminal tells you so)
 ```
 gem install rails -v 6.0
 ```
-7) Run the following commands to made all the dependencies available to your application
+7) If you don't have bundler and yarn installed, you need to run these commands
+```
+gem install bundler
+nvm install 14.15.0
+npm install --global yarn
+```
+8) After that, run the following commands to made all the dependencies available to your application
 ```
 bundle install
 yarn install

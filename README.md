@@ -16,7 +16,7 @@ git clone https://github.com/belisabettega/casalaremaus
 rbenv install 2.6.6
 rbenv global 2.6.6
 ```
-6) Install Rails 6.0.3.7 (Never do sudo gem install rails even if the terminal tells you so)
+6) Install Rails 6.0.3.7 (never do sudo gem install rails even if the terminal tells you so)
 ```
 gem install rails -v 6.0
 ```
@@ -25,7 +25,7 @@ gem install rails -v 6.0
 gem install bundler
 npm install --global yarn
 ```
-8) After that, run the following commands to made all the dependencies available to your application
+8) After that, run the following commands to make all the dependencies available to your application
 ```
 bundle install
 yarn install
@@ -34,6 +34,10 @@ yarn install
 ```
 rails db:create db:migrate
 rails s
+```
+10) You'll be able to open the application by coping the following link to your browser
+```
+http://localhost:3000/
 ```
 ## Licensing
 [MIT License](https://choosealicense.com/licenses/mit/#)

@@ -16,7 +16,7 @@ git clone https://github.com/belisabettega/casalaremaus
 rbenv install 2.6.6
 rbenv global 2.6.6
 ```
-6) Install and Rails 6.0.3.7
+6) Install Rails 6.0.3.7
 ```
 gem install rails -v 6.0
 ```

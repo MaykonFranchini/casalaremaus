@@ -30,6 +30,11 @@ npm install --global yarn
 bundle install
 yarn install
 ```
+9) At last, you just need to create the development database, and run the rails server on yout local host
+```
+rails db:create db:migrate
+rails s
+```
 ## Licensing
 [MIT License](https://choosealicense.com/licenses/mit/#)
 

@@ -9,7 +9,7 @@ This project is used to manage projects, donations and volunteers of the NGO Cas
 git clone https://github.com/belisabettega/casalaremaus
 ```
 
-3) You'll also need to have Ruby 2.6.6 and Rails 6.0.3.7 installed in yout machine
+3) You'll also need to have Ruby 2.6.6 and Rails 6.0.3.7 installed in your machine
 
 ## Licensing
 [MIT License](https://choosealicense.com/licenses/mit/#)

@@ -20,10 +20,9 @@ rbenv global 2.6.6
 ```
 gem install rails -v 6.0
 ```
-7) If you don't have bundler and yarn installed, you need to run these commands
+7) If you don't have bundler and yarn installed, you need to install [NVM - version 14.15.0](https://github.com/nvm-sh/nvm) and then
 ```
 gem install bundler
-nvm install 14.15.0
 npm install --global yarn
 ```
 8) After that, run the following commands to made all the dependencies available to your application

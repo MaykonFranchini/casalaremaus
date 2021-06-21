@@ -9,8 +9,20 @@ This project is used to manage projects, donations and volunteers of the NGO Cas
 git clone https://github.com/belisabettega/casalaremaus
 ```
 
-3) You'll also need to have Ruby 2.6.6 and Rails 6.0.3.7 installed in your machine
-
+3) You'll also need to have Ruby installed in your machine and running the 2.6.6 version by default
+```
+rbenv install 2.6.6
+rbenv global 2.6.6
+```
+4) Install and Rails 6.0.3.7
+```
+gem install rails -v 6.0
+```
+5) Run the following commands to made all the dependencies available to your application
+```
+bundle install
+yarn install
+```
 ## Licensing
 [MIT License](https://choosealicense.com/licenses/mit/#)
 

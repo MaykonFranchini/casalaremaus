@@ -1,0 +1,7 @@
+xadrez:
+  name: "Xadrez"
+  description: "Ensinar xadrez para crianças"
+  status: true
+futebol:
+  name: "Futebol"
+  description: "Jogar futebol com as crianças"

@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :find_order, only: [:show, :destroy]
-  before_action :authenticate_user!, only: [:destroy, :index]
+  before_action :find_order, only: %i[show destroy]
+  before_action :authenticate_user!, only: %i[destroy index]
   def new
     @order = Order.new
   end

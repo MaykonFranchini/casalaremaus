@@ -1,41 +1,41 @@
 class Admin::ProjectsController < ApplicationController
-  before_action :set_project, only: [:edit, :update, :destroy]
-    def new
-      @project = Project.new
-    end
+  before_action :set_project, only: %i[edit update destroy]
+  def new
+    @project = Project.new
+  end
 
-    def create
-      @project = Project.new(project_params)
-      if @project.save
-        redirect_to projects_path
-      else
-        render 'new'
-      end
+  def create
+    @project = Project.new(project_params)
+    if @project.save
+      redirect_to projects_path
+    else
+      render 'new'
     end
+  end
 
-    def edit
-    end
+  def edit
+  end
 
-    def update
-      if @project.update(project_params)
-        redirect_to dashboard_adm_path
-      else
-        render 'edit'
-      end
-    end
-
-    def destroy
-      @project.destroy
+  def update
+    if @project.update(project_params)
       redirect_to dashboard_adm_path
+    else
+      render 'edit'
     end
+  end
 
-    private
+  def destroy
+    @project.destroy
+    redirect_to dashboard_adm_path
+  end
 
-    def set_project
-      @project = Project.find(params[:id])
-    end
+  private
 
-    def project_params
-      params.require(:project).permit(:name, :status, :description, :photo)
-    end
+  def set_project
+    @project = Project.find(params[:id])
+  end
+
+  def project_params
+    params.require(:project).permit(:name, :status, :description, :photo)
+  end
 end

@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show]
-  before_action :authenticate_user!, only: [:destroy, :edit, :update]
+  before_action :set_project, only: :show
+  before_action :authenticate_user!, only: %i[destroy edit update]
 
   def index
     @projects = Project.where(status: true)
